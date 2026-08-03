@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171310">
+  <meta name="description" content="Catálogo digital">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <title>Catálogo</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir para o conteúdo</a>
+  <header class="site-header" data-header>
+    <a class="brand" href="#inicio" aria-label="Início"><span class="brand-mark" data-brand-mark></span><span data-brand-name></span></a>
+    <nav class="desktop-nav" aria-label="Principal" data-nav></nav>
+    <button class="icon-button cart-button" type="button" data-open-cart aria-label="Abrir carrinho">
+      <span aria-hidden="true">Sacola</span><span class="cart-badge" data-cart-count>0</span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="inicio" data-hero></section>
+    <section class="trust-strip" aria-label="Benefícios" data-benefits></section>
+    <section class="section" id="destaques">
+      <div class="section-heading"><p class="eyebrow" data-featured-eyebrow></p><h2 data-featured-title></h2><p data-featured-copy></p></div>
+      <div class="product-rail" data-featured-products></div>
+    </section>
+    <section class="section section-tinted" id="cardapio">
+      <div class="section-heading"><p class="eyebrow" data-catalog-eyebrow></p><h2 data-catalog-title></h2><p data-catalog-copy></p></div>
+      <div class="category-tabs" role="tablist" aria-label="Categorias" data-category-tabs></div>
+      <div class="catalog" data-catalog></div>
+    </section>
+    <section class="section" id="kits" data-kits-section hidden>
+      <div class="section-heading"><p class="eyebrow" data-kits-eyebrow></p><h2 data-kits-title></h2><p data-kits-copy></p></div>
+      <div class="product-grid" data-kits></div>
+    </section>
+    <section class="cta-panel" data-cta></section>
+  </main>
+
+  <footer class="footer" data-footer></footer>
+  <div class="scrim" data-scrim hidden></div>
+
+  <aside class="drawer cart-drawer" data-cart-drawer aria-hidden="true" aria-labelledby="cart-title">
+    <div class="drawer-header"><div><p class="eyebrow">Seu pedido</p><h2 id="cart-title">Carrinho</h2></div><button class="icon-button" type="button" data-close-drawers aria-label="Fechar">×</button></div>
+    <div class="drawer-body" data-cart-items></div>
+    <div class="drawer-footer"><div class="total-row"><span>Total</span><strong data-cart-total></strong></div><button class="button button-primary button-full" type="button" data-open-checkout>Continuar pedido</button></div>
+  </aside>
+
+  <aside class="drawer checkout-drawer" data-checkout-drawer aria-hidden="true" aria-labelledby="checkout-title">
+    <div class="drawer-header"><div><p class="eyebrow">Última etapa</p><h2 id="checkout-title">Finalizar pedido</h2></div><button class="icon-button" type="button" data-close-drawers aria-label="Fechar">×</button></div>
+    <form class="checkout-form drawer-body" data-checkout-form>
+      <label>Nome completo<input name="name" autocomplete="name" required></label>
+      <label>Telefone<input name="phone" type="tel" autocomplete="tel" required></label>
+      <fieldset><legend>Como deseja receber?</legend><div class="choice-grid" data-delivery-options></div></fieldset>
+      <label data-address-field>Endereço completo<textarea name="address" rows="3" autocomplete="street-address"></textarea></label>
+      <label>Forma de pagamento<select name="payment" required data-payment-options></select></label>
+      <label>Observações<textarea name="notes" rows="3" placeholder="Ex.: retirar ingrediente, ponto de referência..."></textarea></label>
+      <div class="order-summary" data-checkout-summary></div>
+      <button class="button button-primary button-full" type="submit">Enviar pedido pelo WhatsApp</button>
+      <p class="form-note">Você poderá revisar a mensagem antes de enviar.</p>
+    </form>
+  </aside>
+
+  <template id="product-card-template">
+    <article class="product-card">
+      <div class="product-image-wrap"><img class="product-image" loading="lazy" decoding="async" alt=""><span class="product-tag"></span></div>
+      <div class="product-content"><p class="product-category"></p><h3 class="product-name"></h3><p class="product-description"></p><div class="product-footer"><div><span class="product-from"></span><strong class="product-price"></strong></div><button class="add-button" type="button" aria-label="Adicionar ao carrinho">+</button></div></div>
+    </article>
+  </template>
+  <script type="module" src="./assets/js/app.js"></script>
+</body>
+</html>
