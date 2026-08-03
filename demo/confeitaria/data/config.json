@@ -1,0 +1,65 @@
+{
+  "demoMode": true,
+  "demoWhatsapp": "5515992370059",
+  "business": {
+    "name": "Bellavie Atelier Doce",
+    "logoText": "B",
+    "tagline": "Confeitaria artesanal",
+    "description": "Doces autorais, ingredientes selecionados e acabamento impecável para tornar cada ocasião memorável.",
+    "address": "Alameda das Magnólias, 248 — Jardim Sereno, São Paulo — SP"
+  },
+  "locale": "pt-BR",
+  "currency": "BRL",
+  "theme": {
+    "name": "chocolate-luxury",
+    "colors": {"primary":"#5b2c22","accent":"#b88344","bg":"#fbfaf8","surface":"#ffffff","text":"#1d1815","muted":"#746b65","line":"#e9e3de"}
+  },
+  "contact": {
+    "phone": "+55 11 4000-2480",
+    "whatsapp": "551140002480",
+    "socials": [
+      {"label":"@bellavie.atelier","url":""},
+      {"label":"Facebook / Bellavie","url":""}
+    ]
+  },
+  "fulfillment": {
+    "deliveryMethods": [
+      {"id":"delivery","label":"Entrega","enabled":true,"requiresAddress":true},
+      {"id":"pickup","label":"Retirada","enabled":true,"requiresAddress":false}
+    ],
+    "paymentMethods": [
+      {"id":"pix","label":"PIX","enabled":true},
+      {"id":"card","label":"Cartão na entrega","enabled":true},
+      {"id":"cash","label":"Dinheiro","enabled":true}
+    ]
+  },
+  "content": {
+    "navigation": [
+      {"label":"Destaques","href":"#destaques"},
+      {"label":"Cardápio","href":"#cardapio"},
+      {"label":"Kits","href":"#kits"}
+    ],
+    "hero": {
+      "eyebrow":"Confeitaria autoral em São Paulo",
+      "title":"A beleza mora nos detalhes.",
+      "description":"Criações artesanais para transformar encontros, presentes e celebrações em lembranças inesquecíveis.",
+      "image":"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1800&q=85",
+      "primaryCta":{"label":"Explorar cardápio","href":"#cardapio"},
+      "secondaryCta":{"label":"Conhecer a Bellavie","href":"#destaques"}
+    },
+    "benefits": [
+      {"icon":"✦","title":"Produção artesanal","description":"Preparado em pequenos lotes"},
+      {"icon":"◌","title":"Ingredientes premium","description":"Selecionados com cuidado"},
+      {"icon":"♢","title":"Entrega cuidadosa","description":"Embalagem segura e elegante"},
+      {"icon":"♡","title":"Atendimento próximo","description":"Pedido direto no WhatsApp"}
+    ],
+    "sections": {
+      "featured":{"eyebrow":"Mais desejados","title":"Escolhas que encantam","description":"Os favoritos da casa, selecionados para deixar sua escolha mais simples."},
+      "catalog":{"eyebrow":"Nosso cardápio","title":"Encontre o seu favorito","description":"Navegue pelas categorias e monte um pedido do seu jeito."},
+      "kits":{"eyebrow":"Para compartilhar","title":"Kits e experiências","description":"Combinações especiais para presentear, celebrar ou transformar um dia comum."}
+    },
+    "cta":{"eyebrow":"Celebre com sabor","title":"Seu momento merece algo único.","description":"Escolha seus favoritos e envie o pedido em poucos instantes.","image":"https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1600&q=85","button":{"label":"Montar meu pedido","href":"#cardapio"}},
+    "checkout":{"note":"Você poderá revisar a mensagem no WhatsApp antes de enviar."},
+    "footer":{"copyright":"Todos os direitos reservados.","links":[{"label":"Início","href":"#inicio"},{"label":"Cardápio","href":"#cardapio"}]}
+  }
+}
