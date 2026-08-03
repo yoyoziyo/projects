@@ -53,20 +53,33 @@
   <aside class="drawer cart-drawer" data-cart-drawer aria-hidden="true" aria-labelledby="cart-title">
     <div class="drawer-header"><div><p class="eyebrow">Seu pedido</p><h2 id="cart-title">Carrinho</h2></div><button class="icon-button" type="button" data-close-drawers aria-label="Fechar">×</button></div>
     <div class="drawer-body" data-cart-items></div>
-    <div class="drawer-footer"><div class="total-row"><span>Total</span><strong data-cart-total></strong></div><button class="button button-primary button-full" type="button" data-open-checkout>Continuar pedido</button></div>
+    <div class="drawer-footer"><div class="total-row"><span>Total</span><strong data-cart-total></strong></div><button class="button button-primary button-full" type="button" data-open-checkout>Fechar pedido</button></div>
   </aside>
 
   <aside class="drawer checkout-drawer" data-checkout-drawer aria-hidden="true" aria-labelledby="checkout-title">
-    <div class="drawer-header"><div><p class="eyebrow">Última etapa</p><h2 id="checkout-title">Finalizar pedido</h2></div><button class="icon-button" type="button" data-close-drawers aria-label="Fechar">×</button></div>
+    <div class="drawer-header"><div><p class="eyebrow">Confirmação</p><h2 id="checkout-title">Fechar pedido</h2></div><button class="icon-button" type="button" data-close-drawers aria-label="Fechar">×</button></div>
     <form class="checkout-form drawer-body" data-checkout-form>
+      <div class="form-section-title"><span>01</span><strong>Contato</strong></div>
       <label>Nome completo<input name="name" autocomplete="name" required></label>
-      <label>Telefone<input name="phone" type="tel" autocomplete="tel" required></label>
+      <div class="field-grid">
+        <label>Telefone / WhatsApp<input name="phone" type="tel" autocomplete="tel" required></label>
+        <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <div class="form-section-title"><span>02</span><strong>Entrega</strong></div>
       <fieldset><legend>Como deseja receber?</legend><div class="choice-grid" data-delivery-options></div></fieldset>
-      <label data-address-field>Endereço completo<textarea name="address" rows="3" autocomplete="street-address"></textarea></label>
+      <div class="address-fields" data-address-fields>
+        <label>Endereço<input name="address" autocomplete="street-address"></label>
+        <div class="field-grid field-grid-address">
+          <label>Número<input name="addressNumber" inputmode="numeric" autocomplete="address-line2"></label>
+          <label>Bairro<input name="district" autocomplete="address-level3"></label>
+        </div>
+        <label>Complemento <span class="optional">opcional</span><input name="complement" autocomplete="address-line2"></label>
+      </div>
+      <div class="form-section-title"><span>03</span><strong>Pagamento e revisão</strong></div>
       <label>Forma de pagamento<select name="payment" required data-payment-options></select></label>
       <label>Observações<textarea name="notes" rows="3" placeholder="Ex.: retirar ingrediente, ponto de referência..."></textarea></label>
       <div class="order-summary" data-checkout-summary></div>
-      <button class="button button-primary button-full" type="submit">Enviar pedido pelo WhatsApp</button>
+      <button class="button button-primary button-full" type="submit">Preparar pedido no WhatsApp</button>
       <p class="form-note" data-checkout-note></p>
     </form>
   </aside>
