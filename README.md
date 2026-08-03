@@ -1,6 +1,6 @@
-# YOITES Catalog
+# YOITES Catalog — demonstração oficial
 
-Plataforma estática e reutilizável para catálogos de pequenos comércios. O conteúdo comercial, a identidade visual, os meios de contato, entrega, pagamento, categorias e produtos são controlados por JSON.
+Primeira versão comercial do catálogo estático e reutilizável da YOITES. A demonstração pública deve ser servida em `https://yoites.com/demo/confeitaria`.
 
 ## Personalização
 
@@ -9,13 +9,17 @@ Plataforma estática e reutilizável para catálogos de pequenos comércios. O c
 
 Não é necessário alterar HTML ou JavaScript para lançar uma nova marca.
 
+## Modo demonstração
+
+Com `demoMode: true`, todos os pedidos são direcionados ao número informado em `demoWhatsapp`. Para entregar a um cliente, desative o modo demonstração e configure `contact.whatsapp`.
+
 ## Execução local
 
 Como o navegador bloqueia `fetch()` em arquivos abertos diretamente, sirva a pasta com qualquer servidor HTTP estático. Exemplo: `npx serve .`.
 
 ## Publicação
 
-Compatível com GitHub Pages, Netlify, Cloudflare Pages, Vercel e qualquer hospedagem de arquivos estáticos. Antes de publicar, substitua o telefone e WhatsApp de exemplo em `config.json`.
+Publique o conteúdo desta pasta sob `/demo/confeitaria/`. Compatível com qualquer hospedagem de arquivos estáticos.
 
 ## Arquitetura
 
