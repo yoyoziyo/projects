@@ -45,7 +45,7 @@
       "eyebrow":"Receitas feitas com afeto",
       "title":"Cada receita, <em>um momento feliz.</em>",
       "description":"Salgados, bolos e doces preparados com ingredientes selecionados para adoçar o seu dia.",
-      "image":"./assets/images/hero-bellavie.webp",
+      "image":"./assets/images/hero-bellavie.svg",
       "primaryCta":{"label":"Explorar cardápio","href":"#cardapio"},
       "secondaryCta":{"label":"Fale conosco","href":"#cardapio"}
     },
