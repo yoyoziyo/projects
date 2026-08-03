@@ -1,0 +1,61 @@
+{
+  "business": {
+    "name": "Maison Cacau",
+    "logoText": "M",
+    "tagline": "Confeitaria artesanal",
+    "description": "Doces autorais, ingredientes selecionados e acabamento impecável para tornar cada ocasião memorável."
+  },
+  "locale": "pt-BR",
+  "currency": "BRL",
+  "theme": {
+    "name": "chocolate-luxury",
+    "colors": {"primary":"#5b2c22","accent":"#b88344","bg":"#fbfaf8","surface":"#ffffff","text":"#1d1815","muted":"#746b65","line":"#e9e3de"}
+  },
+  "contact": {
+    "phone": "+55 11 99999-9999",
+    "whatsapp": "5511999999999",
+    "socials": [
+      {"label":"Instagram","url":"https://instagram.com/"},
+      {"label":"Facebook","url":"https://facebook.com/"}
+    ]
+  },
+  "fulfillment": {
+    "deliveryMethods": [
+      {"id":"delivery","label":"Entrega","enabled":true,"requiresAddress":true},
+      {"id":"pickup","label":"Retirada","enabled":true,"requiresAddress":false}
+    ],
+    "paymentMethods": [
+      {"id":"pix","label":"Pix","enabled":true},
+      {"id":"card","label":"Cartão na entrega","enabled":true},
+      {"id":"cash","label":"Dinheiro","enabled":true}
+    ]
+  },
+  "content": {
+    "navigation": [
+      {"label":"Destaques","href":"#destaques"},
+      {"label":"Cardápio","href":"#cardapio"},
+      {"label":"Kits","href":"#kits"}
+    ],
+    "hero": {
+      "eyebrow":"Feito à mão, todos os dias",
+      "title":"Pequenos luxos. Grandes momentos.",
+      "description":"Uma seleção de sabores criada com técnica, afeto e ingredientes excepcionais.",
+      "image":"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1800&q=85",
+      "primaryCta":{"label":"Explorar cardápio","href":"#cardapio"},
+      "secondaryCta":{"label":"Ver destaques","href":"#destaques"}
+    },
+    "benefits": [
+      {"icon":"✦","title":"Produção artesanal","description":"Preparado em pequenos lotes"},
+      {"icon":"◌","title":"Ingredientes premium","description":"Selecionados com cuidado"},
+      {"icon":"♢","title":"Entrega cuidadosa","description":"Embalagem segura e elegante"},
+      {"icon":"♡","title":"Atendimento próximo","description":"Pedido direto no WhatsApp"}
+    ],
+    "sections": {
+      "featured":{"eyebrow":"Mais desejados","title":"Escolhas que encantam","description":"Os favoritos da casa, selecionados para deixar sua escolha mais simples."},
+      "catalog":{"eyebrow":"Nosso cardápio","title":"Encontre o seu favorito","description":"Navegue pelas categorias e monte um pedido do seu jeito."},
+      "kits":{"eyebrow":"Para compartilhar","title":"Kits e experiências","description":"Combinações especiais para presentear, celebrar ou transformar um dia comum."}
+    },
+    "cta":{"eyebrow":"Celebre com sabor","title":"Seu momento merece algo único.","description":"Escolha seus favoritos e envie o pedido em poucos instantes.","image":"https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1600&q=85","button":{"label":"Montar meu pedido","href":"#cardapio"}},
+    "footer":{"copyright":"Todos os direitos reservados.","links":[{"label":"Início","href":"#inicio"},{"label":"Cardápio","href":"#cardapio"}]}
+  }
+}
