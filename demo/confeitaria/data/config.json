@@ -24,8 +24,8 @@
   },
   "fulfillment": {
     "deliveryMethods": [
-      {"id":"delivery","label":"Entrega","enabled":true,"requiresAddress":true},
-      {"id":"pickup","label":"Retirada","enabled":true,"requiresAddress":false}
+      {"id":"delivery","label":"Entrega","enabled":true,"requiresAddress":true,"fee":0},
+      {"id":"pickup","label":"Retirada","enabled":true,"requiresAddress":false,"fee":0}
     ],
     "paymentMethods": [
       {"id":"pix","label":"PIX","enabled":true},
@@ -61,7 +61,7 @@
       "kits":{"eyebrow":"Celebre com sabor","title":"Kits & Combos","description":"Combinações para todos os tamanhos de encontro."}
     },
     "cta":{"eyebrow":"A sua vitrine digital","title":"Imagine seus produtos aqui.","description":"Um catálogo com a identidade, as categorias e as opções do seu próprio negócio.","image":"","button":{"label":"Explorar o catálogo","href":"#cardapio"}},
-    "checkout":{"note":"Você poderá revisar a mensagem no WhatsApp antes de enviar."},
+    "checkout":{"note":"A mensagem será preparada com todos os dados para você revisar e confirmar no WhatsApp."},
     "footer":{"copyright":"Todos os direitos reservados.","links":[{"label":"Início","href":"#inicio"},{"label":"Cardápio","href":"#cardapio"}]}
   }
 }
