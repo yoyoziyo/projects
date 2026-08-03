@@ -17,6 +17,8 @@ Não é necessário alterar HTML ou JavaScript para lançar uma nova marca.
 
 Com `demoMode: true`, todos os pedidos são direcionados ao número informado em `demoWhatsapp`. Para entregar a um cliente, desative o modo demonstração e configure `contact.whatsapp`.
 
+O fechamento coleta nome, telefone, e-mail, entrega ou retirada, endereço estruturado, pagamento e observações. Cada método de entrega possui um campo `fee` configurável; subtotal, frete e total são incluídos automaticamente no resumo e na mensagem do WhatsApp.
+
 ## Execução local
 
 Como o navegador bloqueia `fetch()` em arquivos abertos diretamente, sirva a pasta com qualquer servidor HTTP estático. Exemplo: `npx serve .`.
