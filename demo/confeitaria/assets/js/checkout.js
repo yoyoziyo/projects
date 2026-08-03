@@ -4,7 +4,7 @@ import {money} from './render.js';
 const qs=s=>document.querySelector(s);
 
 function buildMessage(config,data,method){
-  const productLines=getCart().map(item=>`• ${item.quantity}x ${item.name}`);
+  const productLines=getCart().map(item=>`• ${item.quantity}x ${item.name} — ${item.variantLabel}`);
   return [
     'Olá!','',
     'Gostaria de realizar o seguinte pedido.','',
@@ -41,6 +41,6 @@ export function setupCheckout(config){
 }
 
 export function updateCheckoutSummary(config){
-  const lines=getCart().map(i=>`<div class="summary-line"><span>${i.quantity}x ${i.name}</span><strong>${money(i.price*i.quantity,config.currency,config.locale)}</strong></div>`).join('');
+  const lines=getCart().map(i=>`<div class="summary-line"><span>${i.quantity}x ${i.name}<br><small>${i.variantLabel}</small></span><strong>${money(i.price*i.quantity,config.currency,config.locale)}</strong></div>`).join('');
   qs('[data-checkout-summary]').innerHTML=`${lines}<div class="summary-line"><span>Total</span><strong>${money(cartTotal(),config.currency,config.locale)}</strong></div>`;
 }
