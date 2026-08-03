@@ -11,8 +11,8 @@
   "locale": "pt-BR",
   "currency": "BRL",
   "theme": {
-    "name": "chocolate-luxury",
-    "colors": {"primary":"#5b2c22","accent":"#b88344","bg":"#fbfaf8","surface":"#ffffff","text":"#1d1815","muted":"#746b65","line":"#e9e3de"}
+    "name": "blush-editorial",
+    "colors": {"primary":"#e95578","accent":"#f3a0b4","bg":"#fffaf8","surface":"#ffffff","text":"#291718","muted":"#756467","line":"#f0e3e3"}
   },
   "contact": {
     "phone": "+55 11 4000-2480",
@@ -35,17 +35,19 @@
   },
   "content": {
     "navigation": [
+      {"label":"Início","href":"#inicio"},
       {"label":"Destaques","href":"#destaques"},
-      {"label":"Cardápio","href":"#cardapio"},
-      {"label":"Kits","href":"#kits"}
+      {"label":"Salgados","href":"#salgados"},
+      {"label":"Bolos","href":"#bolos"},
+      {"label":"Doces","href":"#doces"}
     ],
     "hero": {
-      "eyebrow":"Confeitaria autoral em São Paulo",
-      "title":"A beleza mora nos detalhes.",
-      "description":"Criações artesanais para transformar encontros, presentes e celebrações em lembranças inesquecíveis.",
-      "image":"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1800&q=85",
+      "eyebrow":"Receitas feitas com afeto",
+      "title":"Cada receita, <em>um momento feliz.</em>",
+      "description":"Salgados, bolos e doces preparados com ingredientes selecionados para adoçar o seu dia.",
+      "image":"./assets/images/hero-bellavie.webp",
       "primaryCta":{"label":"Explorar cardápio","href":"#cardapio"},
-      "secondaryCta":{"label":"Conhecer a Bellavie","href":"#destaques"}
+      "secondaryCta":{"label":"Fale conosco","href":"#cardapio"}
     },
     "benefits": [
       {"icon":"✦","title":"Produção artesanal","description":"Preparado em pequenos lotes"},
@@ -54,9 +56,9 @@
       {"icon":"♡","title":"Atendimento próximo","description":"Pedido direto no WhatsApp"}
     ],
     "sections": {
-      "featured":{"eyebrow":"Mais desejados","title":"Escolhas que encantam","description":"Os favoritos da casa, selecionados para deixar sua escolha mais simples."},
-      "catalog":{"eyebrow":"Nosso cardápio","title":"Encontre o seu favorito","description":"Navegue pelas categorias e monte um pedido do seu jeito."},
-      "kits":{"eyebrow":"Para compartilhar","title":"Kits e experiências","description":"Combinações especiais para presentear, celebrar ou transformar um dia comum."}
+      "featured":{"eyebrow":"Queridinhos da casa","title":"Nossos destaques","description":"Uma seleção dos sabores que todo mundo ama."},
+      "catalog":{"eyebrow":"Feito para você","title":"Nosso cardápio","description":"Escolha a versão ideal, toque no + e monte sua sacola."},
+      "kits":{"eyebrow":"Celebre com sabor","title":"Kits & Combos","description":"Combinações para todos os tamanhos de encontro."}
     },
     "cta":{"eyebrow":"Celebre com sabor","title":"Seu momento merece algo único.","description":"Escolha seus favoritos e envie o pedido em poucos instantes.","image":"https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1600&q=85","button":{"label":"Montar meu pedido","href":"#cardapio"}},
     "checkout":{"note":"Você poderá revisar a mensagem no WhatsApp antes de enviar."},
