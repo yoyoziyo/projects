@@ -9,7 +9,7 @@ Primeira versão comercial do catálogo estático e reutilizável da YOITES. A d
 
 Cada produto pode declarar `variants`, permitindo opções como 50, 100 ou 150 unidades, tamanhos, pesos e versões diferentes. Cada variante possui seu próprio preço e entra separadamente na sacola.
 
-As imagens também são definidas no JSON. A demonstração inclui uma hero original em `assets/images/`; fotos de produtos podem ser substituídas por URL sem alterar o HTML ou JavaScript.
+O modo de demonstração não utiliza fotografias: os produtos recebem composições abstratas em rosa e cinza para que cada comerciante imagine o próprio catálogo. Se um cliente desejar fotos, a arquitetura continua preparada para receber essa camada visual futuramente.
 
 Não é necessário alterar HTML ou JavaScript para lançar uma nova marca.
 
