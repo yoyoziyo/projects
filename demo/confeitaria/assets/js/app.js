@@ -1,20 +1,18 @@
 
-import {addItem,updateQuantity,removeItem,cartTotal,getCart,subscribe} from './store.js?v=20260803-3';
-import {applyConfig,renderCatalog,money} from './render.js?v=20260803-3';
-import {setupCheckout,updateCheckoutSummary} from './checkout.js?v=20260803-3';
+import {addItem,updateQuantity,removeItem,cartTotal,getCart,subscribe} from './store.release-20260803.js';
+import {applyConfig,renderCatalog,money} from './render.release-20260803-3.js';
+import {setupCheckout,updateCheckoutSummary} from './checkout.release-20260803-2.js';
 
 const qs=selector=>document.querySelector(selector);let config;let toastTimer;
-const release='20260803-3';
 const resources={
-  config:new URL('../../data/config.json',import.meta.url),
-  categories:new URL('../../data/categories.json',import.meta.url),
-  products:new URL('../../data/products.json',import.meta.url)
+  config:new URL('../../data/config.release-20260803.json',import.meta.url),
+  categories:new URL('../../data/categories.release-20260803.json',import.meta.url),
+  products:new URL('../../data/products.release-20260803.json',import.meta.url)
 };
 
 function setResourceState(name,state){const item=qs(`[data-resource-status="${name}"]`);if(!item)return;item.dataset.state=state;item.querySelector('span').textContent=state==='ready'?'✓':state==='error'?'!':''}
 async function loadJSON(name,url){
   setResourceState(name,'loading');
-  url.searchParams.set('v',release);
   try{const response=await fetch(url,{headers:{Accept:'application/json'},cache:'no-store'});if(!response.ok)throw new Error(`${response.status} ${response.statusText}`);const data=await response.json();setResourceState(name,'ready');return data}
   catch(error){setResourceState(name,'error');throw new Error(`${name}: ${error.message}`)}
 }
@@ -24,14 +22,6 @@ function showLoadError(){
   qs('[data-retry]').hidden=false;qs('[data-catalog]').setAttribute('aria-busy','false');
 }
 function showToast(message){const toast=qs('[data-toast]');toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2200)}
-
-function setupEffects(){
-  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;const elements=[...document.querySelectorAll('.section-heading,.benefit,.product-card,.cta-panel')];
-  elements.forEach((element,index)=>{element.classList.add('reveal');element.style.setProperty('--reveal-delay',`${Math.min(index%6,5)*55}ms`)});
-  if(reducedMotion){elements.forEach(element=>element.classList.add('visible'));return}
-  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12,rootMargin:'0px 0px -30px'});elements.forEach(element=>observer.observe(element));
-  if(matchMedia('(pointer:fine)').matches)document.addEventListener('pointermove',event=>{const x=(event.clientX/innerWidth-.5)*12;const y=(event.clientY/innerHeight-.5)*12;document.documentElement.style.setProperty('--hero-x',`${x}px`);document.documentElement.style.setProperty('--hero-y',`${y}px`)},{passive:true});
-}
 
 function setupInterface(){
   const scrim=qs('[data-scrim]');const drawers=[qs('[data-cart-drawer]'),qs('[data-checkout-drawer]')];
@@ -49,7 +39,7 @@ async function bootstrap(){
   try{
     const [configData,categories,products]=results.map(result=>result.value);if(!Array.isArray(categories)||!Array.isArray(products))throw new Error('Formato de catálogo inválido');
     config=configData;applyConfig(config);renderCatalog({categories,products},config,(product,variant)=>{addItem(product,variant);showToast(`${product.name} · ${variant.label} adicionado`);const badge=qs('[data-cart-count]');badge.classList.remove('bump');requestAnimationFrame(()=>badge.classList.add('bump'))});
-    setupCheckout(config);setupInterface();setupEffects();qs('[data-catalog-fallback]').hidden=true;qs('[data-load-panel]').hidden=true;qs('[data-open-cart]').disabled=false;
+    setupCheckout(config);setupInterface();qs('[data-catalog-fallback]').hidden=true;qs('[data-load-panel]').hidden=true;qs('[data-open-cart]').disabled=false;
   }catch{showLoadError()}
 }
 
