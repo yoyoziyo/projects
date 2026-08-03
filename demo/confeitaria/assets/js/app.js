@@ -1,8 +1,10 @@
+
 import {addItem,updateQuantity,removeItem,cartTotal,getCart,subscribe} from './store.js';
 import {applyConfig,renderCatalog,money} from './render.js';
 import {setupCheckout,updateCheckoutSummary} from './checkout.js';
 
 const qs=selector=>document.querySelector(selector);let config;let toastTimer;
+const release='20260803-2';
 const resources={
   config:new URL('../../data/config.json',import.meta.url),
   categories:new URL('../../data/categories.json',import.meta.url),
@@ -12,7 +14,8 @@ const resources={
 function setResourceState(name,state){const item=qs(`[data-resource-status="${name}"]`);if(!item)return;item.dataset.state=state;item.querySelector('span').textContent=state==='ready'?'✓':state==='error'?'!':''}
 async function loadJSON(name,url){
   setResourceState(name,'loading');
-  try{const response=await fetch(url,{headers:{Accept:'application/json'}});if(!response.ok)throw new Error(`${response.status} ${response.statusText}`);const data=await response.json();setResourceState(name,'ready');return data}
+  url.searchParams.set('v',release);
+  try{const response=await fetch(url,{headers:{Accept:'application/json'},cache:'no-store'});if(!response.ok)throw new Error(`${response.status} ${response.statusText}`);const data=await response.json();setResourceState(name,'ready');return data}
   catch(error){setResourceState(name,'error');throw new Error(`${name}: ${error.message}`)}
 }
 function showLoadError(){
@@ -51,3 +54,4 @@ async function bootstrap(){
 }
 
 qs('[data-retry]').addEventListener('click',()=>location.reload());bootstrap();
+
