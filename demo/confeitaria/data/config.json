@@ -2,11 +2,11 @@
   "demoMode": true,
   "demoWhatsapp": "5515992370059",
   "business": {
-    "name": "Bellavie Atelier Doce",
-    "logoText": "B",
-    "tagline": "Confeitaria artesanal",
-    "description": "Doces autorais, ingredientes selecionados e acabamento impecável para tornar cada ocasião memorável.",
-    "address": "Alameda das Magnólias, 248 — Jardim Sereno, São Paulo — SP"
+    "name": "Sua Marca",
+    "logoText": "S",
+    "tagline": "Seu catálogo digital",
+    "description": "Seus produtos, sua identidade e uma experiência de compra feita para encantar seus clientes.",
+    "address": "Sua localização"
   },
   "locale": "pt-BR",
   "currency": "BRL",
@@ -15,11 +15,11 @@
     "colors": {"primary":"#e95578","accent":"#f3a0b4","bg":"#fffaf8","surface":"#ffffff","text":"#291718","muted":"#756467","line":"#f0e3e3"}
   },
   "contact": {
-    "phone": "+55 11 4000-2480",
+    "phone": "(00) 00000-0000",
     "whatsapp": "551140002480",
     "socials": [
-      {"label":"@bellavie.atelier","url":""},
-      {"label":"Facebook / Bellavie","url":""}
+      {"label":"Seu Instagram","url":""},
+      {"label":"Seu Facebook","url":""}
     ]
   },
   "fulfillment": {
@@ -42,12 +42,12 @@
       {"label":"Doces","href":"#doces"}
     ],
     "hero": {
-      "eyebrow":"Receitas feitas com afeto",
-      "title":"Cada receita, <em>um momento feliz.</em>",
-      "description":"Salgados, bolos e doces preparados com ingredientes selecionados para adoçar o seu dia.",
-      "image":"./assets/images/hero-bellavie.svg",
+      "eyebrow":"O seu negócio merece destaque",
+      "title":"Sua marca, <em>do seu jeito.</em>",
+      "description":"Imagine seus produtos apresentados em uma experiência bonita, simples e pronta para vender.",
+      "image":"",
       "primaryCta":{"label":"Explorar cardápio","href":"#cardapio"},
-      "secondaryCta":{"label":"Fale conosco","href":"#cardapio"}
+      "secondaryCta":{"label":"Ver possibilidades","href":"#destaques"}
     },
     "benefits": [
       {"icon":"✦","title":"Produção artesanal","description":"Preparado em pequenos lotes"},
@@ -60,7 +60,7 @@
       "catalog":{"eyebrow":"Feito para você","title":"Nosso cardápio","description":"Escolha a versão ideal, toque no + e monte sua sacola."},
       "kits":{"eyebrow":"Celebre com sabor","title":"Kits & Combos","description":"Combinações para todos os tamanhos de encontro."}
     },
-    "cta":{"eyebrow":"Celebre com sabor","title":"Seu momento merece algo único.","description":"Escolha seus favoritos e envie o pedido em poucos instantes.","image":"https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1600&q=85","button":{"label":"Montar meu pedido","href":"#cardapio"}},
+    "cta":{"eyebrow":"A sua vitrine digital","title":"Imagine seus produtos aqui.","description":"Um catálogo com a identidade, as categorias e as opções do seu próprio negócio.","image":"","button":{"label":"Explorar o catálogo","href":"#cardapio"}},
     "checkout":{"note":"Você poderá revisar a mensagem no WhatsApp antes de enviar."},
     "footer":{"copyright":"Todos os direitos reservados.","links":[{"label":"Início","href":"#inicio"},{"label":"Cardápio","href":"#cardapio"}]}
   }
