@@ -13,7 +13,6 @@
   <meta property="og:url" content="https://yoites.com/demo/confeitaria">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://yoites.com/demo/confeitaria">
-  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="./assets/css/styles.css">
   <link rel="manifest" href="./manifest.webmanifest">
   <title>Confeitaria artesanal</title>
@@ -74,7 +73,7 @@
 
   <template id="product-card-template">
     <article class="product-card">
-      <div class="product-image-wrap"><img class="product-image" loading="lazy" decoding="async" alt=""><span class="product-tag"></span></div>
+      <div class="product-image-wrap"><span class="product-orbit" aria-hidden="true"></span><span class="product-symbol" aria-hidden="true"></span><span class="product-tag"></span></div>
       <div class="product-content"><p class="product-category"></p><h3 class="product-name"></h3><p class="product-description"></p><label class="variant-field"><span>Escolha uma opção</span><select class="variant-select"></select></label><div class="product-footer"><div><span class="product-from"></span><strong class="product-price"></strong></div><button class="add-button" type="button" aria-label="Adicionar à sacola">+</button></div></div>
     </article>
   </template>
