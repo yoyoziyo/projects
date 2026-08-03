@@ -29,7 +29,7 @@
     ],
     "paymentMethods": [
       {"id":"pix","label":"PIX","enabled":true},
-      {"id":"card","label":"Cartão na entrega","enabled":true},
+      {"id":"card","label":"Cartão","enabled":true},
       {"id":"cash","label":"Dinheiro","enabled":true}
     ]
   },
