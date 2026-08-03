@@ -1,13 +1,15 @@
+
 {
   "id":"./",
-  "name":"Bella Confeitaria",
-  "short_name":"Bella",
-  "description":"Bolos, salgados, doces e combos para festas e celebrações.",
+  "name":"Lai-iara Gourmet",
+  "short_name":"Lai-iara",
+  "description":"Doces, salgados, bolos e combos preparados com amor.",
   "lang":"pt-BR",
   "start_url":"./",
   "scope":"./",
   "display":"standalone",
-  "background_color":"#fffaf8",
-  "theme_color":"#e95578",
-  "icons":[{"src":"./assets/img/favicon.png","sizes":"64x64","type":"image/png"}]
+  "background_color":"#fffaf3",
+  "theme_color":"#ff6500",
+  "icons":[{"src":"./assets/img/logo-lai-iara.png","sizes":"1024x1024","type":"image/png","purpose":"any maskable"}]
 }
+
