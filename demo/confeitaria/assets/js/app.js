@@ -1,10 +1,10 @@
 
-import {addItem,updateQuantity,removeItem,cartTotal,getCart,subscribe} from './store.js?v=20260803-2';
-import {applyConfig,renderCatalog,money} from './render.js?v=20260803-2';
-import {setupCheckout,updateCheckoutSummary} from './checkout.js?v=20260803-2';
+import {addItem,updateQuantity,removeItem,cartTotal,getCart,subscribe} from './store.js?v=20260803-3';
+import {applyConfig,renderCatalog,money} from './render.js?v=20260803-3';
+import {setupCheckout,updateCheckoutSummary} from './checkout.js?v=20260803-3';
 
 const qs=selector=>document.querySelector(selector);let config;let toastTimer;
-const release='20260803-2';
+const release='20260803-3';
 const resources={
   config:new URL('../../data/config.json',import.meta.url),
   categories:new URL('../../data/categories.json',import.meta.url),
