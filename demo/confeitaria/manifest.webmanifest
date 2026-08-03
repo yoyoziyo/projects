@@ -1,1 +1,13 @@
-{"name":"Catálogo Digital","short_name":"Catálogo","start_url":"./","display":"standalone","background_color":"#fbfaf8","theme_color":"#171310","icons":[]}
+{
+  "id":"./",
+  "name":"Bella Confeitaria",
+  "short_name":"Bella",
+  "description":"Bolos, salgados, doces e combos para festas e celebrações.",
+  "lang":"pt-BR",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#fffaf8",
+  "theme_color":"#e95578",
+  "icons":[{"src":"./assets/img/favicon.png","sizes":"64x64","type":"image/png"}]
+}

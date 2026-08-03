@@ -3,50 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#241a16">
-  <meta name="description" content="Confeitaria artesanal — encomendas online">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#e95578">
+  <meta name="description" content="Conheça o cardápio da Bella Confeitaria: bolos de aniversário, bolos caseiros, combos, salgados e doces para festas. Monte seu pedido online e confirme pelo WhatsApp.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Confeitaria artesanal">
-  <meta property="og:description" content="Descubra sabores artesanais e faça seu pedido online.">
-  <meta property="og:url" content="https://yoites.com/demo/confeitaria">
+  <meta property="og:site_name" content="Bella Confeitaria">
+  <meta property="og:title" content="Bella Confeitaria | Salgados, Bolos, Doces e Kits">
+  <meta property="og:description" content="Bolos para celebrar, salgados, doces e combos preparados para tornar cada ocasião especial. Escolha seus produtos e faça seu pedido online.">
+  <meta property="og:url" content="https://yoites.com/demo/confeitaria/">
+  <meta property="og:image" content="https://yoites.com/demo/confeitaria/assets/img/og-bella-confeitaria.jpg">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="420">
+  <meta property="og:image:alt" content="Bella Confeitaria — Bolos, Salgados, Doces e Combos">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://yoites.com/demo/confeitaria">
+  <meta name="twitter:title" content="Bella Confeitaria | Salgados, Bolos, Doces e Kits">
+  <meta name="twitter:description" content="Bolos para celebrar, salgados, doces e combos. Monte seu pedido online e confirme pelo WhatsApp.">
+  <meta name="twitter:image" content="https://yoites.com/demo/confeitaria/assets/img/og-bella-confeitaria.jpg">
+  <meta name="twitter:image:alt" content="Bella Confeitaria — Bolos, Salgados, Doces e Combos">
+  <link rel="canonical" href="https://yoites.com/demo/confeitaria/">
+  <link rel="icon" type="image/png" sizes="64x64" href="./assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/img/favicon.png">
   <link rel="stylesheet" href="./assets/css/styles.css">
   <link rel="manifest" href="./manifest.webmanifest">
-  <title>Confeitaria artesanal</title>
+  <title>Bella Confeitaria | Salgados, Bolos, Doces e Kits</title>
 </head>
 <body>
   <a class="skip-link" href="#main">Ir para o conteúdo</a>
   <header class="site-header" data-header>
-    <a class="brand" href="#inicio" aria-label="Início"><span class="brand-mark" data-brand-mark></span><span data-brand-name></span></a>
-    <nav class="desktop-nav" aria-label="Principal" data-nav></nav>
-    <button class="icon-button cart-button" type="button" data-open-cart aria-label="Abrir sacola">
+    <a class="brand" href="#inicio" aria-label="Bella Confeitaria — início"><span class="brand-mark" data-brand-mark>B</span><span data-brand-name>Bella Confeitaria</span></a>
+    <nav class="desktop-nav" aria-label="Principal" data-nav>
+      <a href="#inicio">Início</a><a href="#bolos">Bolos</a><a href="#combos">Combos</a><a href="#salgados">Salgados</a><a href="#doces">Doces</a>
+    </nav>
+    <button class="icon-button cart-button" type="button" data-open-cart aria-label="Abrir sacola" disabled>
       <span class="bag-icon" aria-hidden="true"></span><span>Sacola</span><span class="cart-badge" data-cart-count>0</span>
     </button>
   </header>
 
   <main id="main">
-    <section class="hero" id="inicio" data-hero></section>
-    <section class="trust-strip" aria-label="Benefícios" data-benefits></section>
-    <section class="section" id="destaques">
-      <div class="section-heading"><p class="eyebrow" data-featured-eyebrow></p><h2 data-featured-title></h2><p data-featured-copy></p></div>
-      <div class="product-rail" data-featured-products></div>
+    <section class="hero" id="inicio" data-hero>
+      <div class="hero-content">
+        <p class="eyebrow" data-hero-eyebrow>Momentos especiais começam aqui</p>
+        <h1 data-hero-title>Bolos e sabores <em>para celebrar.</em></h1>
+        <p class="hero-copy" data-hero-copy>Encomendas de bolos, salgados, doces e combos preparados com carinho para a sua ocasião.</p>
+        <div class="button-row"><a class="button button-primary" data-hero-primary href="#cardapio">Ver cardápio</a><a class="button button-ghost" data-hero-secondary href="#bolos">Encomendar bolo</a></div>
+      </div>
     </section>
-    <section class="section menu-section" id="cardapio">
-      <div class="section-heading"><p class="eyebrow" data-catalog-eyebrow></p><h2 data-catalog-title></h2><p data-catalog-copy></p></div>
-      <div class="category-tabs" role="tablist" aria-label="Categorias" data-category-tabs></div>
-      <div class="catalog" data-catalog></div>
+
+    <section class="trust-strip" aria-label="Benefícios" data-benefits>
+      <article class="benefit"><span class="benefit-icon" aria-hidden="true">✦</span><strong>Produção artesanal</strong><span>Preparado com cuidado</span></article>
+      <article class="benefit"><span class="benefit-icon" aria-hidden="true">◌</span><strong>Variedade para festas</strong><span>Bolos, doces e salgados</span></article>
+      <article class="benefit"><span class="benefit-icon" aria-hidden="true">♢</span><strong>Encomenda planejada</strong><span>Mais tranquilidade para você</span></article>
+      <article class="benefit"><span class="benefit-icon" aria-hidden="true">♡</span><strong>Pedido pelo WhatsApp</strong><span>Simples, rápido e direto</span></article>
     </section>
-    <section class="section" id="kits" data-kits-section hidden>
-      <div class="section-heading"><p class="eyebrow" data-kits-eyebrow></p><h2 data-kits-title></h2><p data-kits-copy></p></div>
-      <div class="product-grid" data-kits></div>
+
+    <section class="section menu-section" id="cardapio" aria-labelledby="catalog-title">
+      <div class="section-heading"><p class="eyebrow" data-catalog-eyebrow>Escolha com carinho</p><h2 id="catalog-title" data-catalog-title>Nosso cardápio</h2><p data-catalog-copy>Bolos, combos, salgados e doces para todos os momentos.</p></div>
+
+      <div class="catalog-status" data-load-panel role="status" aria-live="polite">
+        <strong data-load-title>Preparando o cardápio…</strong>
+        <ul aria-label="Status de carregamento">
+          <li data-resource-status="config"><span></span>Identidade</li>
+          <li data-resource-status="categories"><span></span>Categorias</li>
+          <li data-resource-status="products"><span></span>Produtos</li>
+        </ul>
+        <p data-load-message>Carregando as informações mais recentes.</p>
+        <button class="button button-primary" type="button" data-retry hidden>Tentar novamente</button>
+      </div>
+
+      <nav class="category-tabs" aria-label="Categorias do cardápio" data-category-tabs></nav>
+      <div class="catalog" data-catalog aria-live="polite" aria-busy="true"></div>
+
+      <div class="catalog-fallback" data-catalog-fallback>
+        <section aria-labelledby="fallback-bolos"><h3 id="fallback-bolos">Bolos</h3><p>Encomendas com antecedência. Topper opcional por R$ 30,00.</p><ul><li><strong>Bolo baby, 8 pessoas</strong> — R$ 75,00</li><li><strong>Bolo para 10 pessoas</strong> — R$ 90,00</li><li><strong>Bolo para 15 pessoas</strong> — R$ 140,00</li><li><strong>Bolo para 20 pessoas</strong> — R$ 200,00</li><li><strong>Bolo para 30 pessoas</strong> — R$ 250,00</li><li><strong>Bolo para 40 pessoas</strong> — R$ 300,00</li><li><strong>Bolo para 50 pessoas</strong> — R$ 350,00</li><li><strong>Bolo simples</strong> — R$ 15,00</li><li><strong>Bolo vulcão</strong> — R$ 40,00</li><li><strong>Bolo piscina</strong> — R$ 25,00</li><li><strong>Bolo de pote</strong> — R$ 12,00</li></ul></section>
+        <section aria-labelledby="fallback-combos"><h3 id="fallback-combos">Combos</h3><ul><li><strong>Combo 1:</strong> 50 salgados fritos + Kuat 2 L — R$ 46,00</li><li><strong>Combo 2:</strong> 100 salgados fritos + Kuat 2 L — R$ 86,00</li><li><strong>Combo 3:</strong> 50 salgados fritos + Coca-Cola 2 L — R$ 55,00</li><li><strong>Combo 4:</strong> 100 salgados fritos + Coca-Cola 2 L — R$ 95,00</li><li><strong>Combo 5:</strong> 50 minipastéis + Kuat 2 L — R$ 52,00</li><li><strong>Combo 6:</strong> 50 minipastéis + Coca-Cola 2 L — R$ 60,00</li></ul></section>
+        <section aria-labelledby="fallback-salgados"><h3 id="fallback-salgados">Salgados</h3><ul><li><strong>Cento frito</strong> — R$ 80,00</li><li><strong>Cento cru</strong> — R$ 70,00</li><li><strong>Cento assado</strong> — R$ 100,00</li><li><strong>Cento de pastéis</strong> — R$ 90,00</li><li><strong>Cento de empadinhas</strong> — R$ 100,00</li><li><strong>Cento de churros</strong> — R$ 80,00</li></ul></section>
+        <section aria-labelledby="fallback-doces"><h3 id="fallback-doces">Doces</h3><p>Encomendas com dois dias de antecedência.</p><ul><li><strong>Cento de doces para festa</strong> — R$ 100,00. Sabores: beijinho, brigadeiro, brigadeiro de Ninho e crespinho.</li></ul></section>
+      </div>
     </section>
-    <section class="cta-panel" data-cta></section>
+
+    <section class="cta-panel" data-cta>
+      <div class="cta-content"><p class="eyebrow">Celebre com sabor</p><h2>Seu pedido, do seu jeito.</h2><p>Escolha tamanhos, sabores e combinações para montar uma encomenda especial.</p><a class="button button-primary" href="#cardapio">Montar pedido</a></div>
+    </section>
   </main>
 
-  <footer class="footer" data-footer></footer>
+  <footer class="footer" data-footer>
+    <div class="footer-brand"><a class="brand" href="#inicio"><span class="brand-mark">B</span><span>Bella Confeitaria</span></a><p>Bolos, salgados, doces e combos preparados para celebrar.</p><span class="footer-address">Sua localização</span><br><small>© 2026 Bella Confeitaria. Todos os direitos reservados.</small></div>
+    <div class="footer-links"><span>Seu Instagram</span><span>Seu Facebook</span></div><div class="footer-links"><a href="#inicio">Início</a><a href="#cardapio">Cardápio</a></div>
+  </footer>
+
+  <noscript><div class="noscript-note">O cardápio acima permanece disponível para consulta. Ative o JavaScript para montar a sacola e enviar o pedido pelo WhatsApp.</div></noscript>
   <div class="toast" role="status" aria-live="polite" aria-atomic="true" data-toast></div>
   <div class="scrim" data-scrim hidden></div>
 
@@ -61,20 +107,10 @@
     <form class="checkout-form drawer-body" data-checkout-form>
       <div class="form-section-title"><span>01</span><strong>Contato</strong></div>
       <label>Nome completo<input name="name" autocomplete="name" required></label>
-      <div class="field-grid">
-        <label>Telefone / WhatsApp<input name="phone" type="tel" autocomplete="tel" required></label>
-        <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
-      </div>
+      <div class="field-grid"><label>Telefone / WhatsApp<input name="phone" type="tel" autocomplete="tel" required></label><label>E-mail<input name="email" type="email" autocomplete="email" required></label></div>
       <div class="form-section-title"><span>02</span><strong>Entrega</strong></div>
       <fieldset><legend>Como deseja receber?</legend><div class="choice-grid" data-delivery-options></div></fieldset>
-      <div class="address-fields" data-address-fields>
-        <label>Endereço<input name="address" autocomplete="street-address"></label>
-        <div class="field-grid field-grid-address">
-          <label>Número<input name="addressNumber" inputmode="numeric" autocomplete="address-line2"></label>
-          <label>Bairro<input name="district" autocomplete="address-level3"></label>
-        </div>
-        <label>Complemento <span class="optional">opcional</span><input name="complement" autocomplete="address-line2"></label>
-      </div>
+      <div class="address-fields" data-address-fields><label>Endereço<input name="address" autocomplete="street-address"></label><div class="field-grid field-grid-address"><label>Número<input name="addressNumber" inputmode="numeric" autocomplete="address-line2"></label><label>Bairro<input name="district" autocomplete="address-level3"></label></div><label>Complemento <span class="optional">opcional</span><input name="complement" autocomplete="address-line2"></label></div>
       <div class="form-section-title"><span>03</span><strong>Pagamento e revisão</strong></div>
       <label>Forma de pagamento<select name="payment" required data-payment-options></select></label>
       <label>Observações<textarea name="notes" rows="3" placeholder="Ex.: retirar ingrediente, ponto de referência..."></textarea></label>
@@ -87,10 +123,10 @@
   <template id="product-card-template">
     <article class="product-card">
       <div class="product-image-wrap"><span class="product-orbit" aria-hidden="true"></span><span class="product-symbol" aria-hidden="true"></span><span class="product-tag"></span></div>
-      <div class="product-content"><p class="product-category"></p><h3 class="product-name"></h3><p class="product-description"></p><label class="variant-field"><span>Escolha uma opção</span><select class="variant-select"></select></label><div class="product-footer"><div><span class="product-from"></span><strong class="product-price"></strong></div><button class="add-button" type="button" aria-label="Adicionar à sacola">+</button></div></div>
+      <div class="product-content"><p class="product-category"></p><h4 class="product-name"></h4><p class="product-description"></p><label class="variant-field"><span>Escolha uma opção</span><select class="variant-select"></select></label><label class="flavor-field" hidden><span>Escolha o sabor</span><select class="flavor-select"></select></label><label class="extra-field" hidden><input class="extra-checkbox" type="checkbox"><span class="extra-label"></span></label><div class="product-footer"><div><span class="product-from"></span><strong class="product-price"></strong></div><button class="add-button" type="button" aria-label="Adicionar à sacola">+</button></div></div>
     </article>
   </template>
-  <script type="application/ld+json" data-schema>{}</script>
+  <script type="application/ld+json" data-schema>{"@context":"https://schema.org","@type":"Bakery","name":"Bella Confeitaria","description":"Bolos, salgados, doces e combos para festas e celebrações.","url":"https://yoites.com/demo/confeitaria/"}</script>
   <script type="module" src="./assets/js/app.js"></script>
 </body>
 </html>

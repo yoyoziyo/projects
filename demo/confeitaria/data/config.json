@@ -2,11 +2,19 @@
   "demoMode": true,
   "demoWhatsapp": "5515992370059",
   "business": {
-    "name": "Sua Marca",
-    "logoText": "S",
-    "tagline": "Seu catálogo digital",
-    "description": "Seus produtos, sua identidade e uma experiência de compra feita para encantar seus clientes.",
+    "name": "Bella Confeitaria",
+    "logoText": "B",
+    "tagline": "Bolos, salgados, doces e combos",
+    "description": "Bolos, salgados, doces e combos preparados para tornar cada celebração ainda mais especial.",
     "address": "Sua localização"
+  },
+  "seo": {
+    "title": "Bella Confeitaria | Salgados, Bolos, Doces e Kits",
+    "description": "Conheça o cardápio da Bella Confeitaria: bolos de aniversário, bolos caseiros, combos, salgados e doces para festas. Monte seu pedido online e confirme pelo WhatsApp.",
+    "socialDescription": "Bolos para celebrar, salgados, doces e combos preparados para tornar cada ocasião especial. Escolha seus produtos e faça seu pedido online.",
+    "url": "https://yoites.com/demo/confeitaria/",
+    "image": "https://yoites.com/demo/confeitaria/assets/img/og-bella-confeitaria.jpg",
+    "imageAlt": "Bella Confeitaria — Bolos, Salgados, Doces e Combos"
   },
   "locale": "pt-BR",
   "currency": "BRL",
@@ -36,31 +44,29 @@
   "content": {
     "navigation": [
       {"label":"Início","href":"#inicio"},
-      {"label":"Destaques","href":"#destaques"},
-      {"label":"Salgados","href":"#salgados"},
       {"label":"Bolos","href":"#bolos"},
+      {"label":"Combos","href":"#combos"},
+      {"label":"Salgados","href":"#salgados"},
       {"label":"Doces","href":"#doces"}
     ],
     "hero": {
-      "eyebrow":"O seu negócio merece destaque",
-      "title":"Sua marca, <em>do seu jeito.</em>",
-      "description":"Imagine seus produtos apresentados em uma experiência bonita, simples e pronta para vender.",
+      "eyebrow":"Momentos especiais começam aqui",
+      "title":"Bolos e sabores <em>para celebrar.</em>",
+      "description":"Encomendas de bolos, salgados, doces e combos preparados com carinho para a sua ocasião.",
       "image":"",
-      "primaryCta":{"label":"Explorar cardápio","href":"#cardapio"},
-      "secondaryCta":{"label":"Ver possibilidades","href":"#destaques"}
+      "primaryCta":{"label":"Ver cardápio","href":"#cardapio"},
+      "secondaryCta":{"label":"Encomendar bolo","href":"#bolos"}
     },
     "benefits": [
-      {"icon":"✦","title":"Produção artesanal","description":"Preparado em pequenos lotes"},
-      {"icon":"◌","title":"Ingredientes premium","description":"Selecionados com cuidado"},
-      {"icon":"♢","title":"Entrega cuidadosa","description":"Embalagem segura e elegante"},
-      {"icon":"♡","title":"Atendimento próximo","description":"Pedido direto no WhatsApp"}
+      {"icon":"✦","title":"Produção artesanal","description":"Preparado com cuidado"},
+      {"icon":"◌","title":"Variedade para festas","description":"Bolos, doces e salgados"},
+      {"icon":"♢","title":"Encomenda planejada","description":"Mais tranquilidade para você"},
+      {"icon":"♡","title":"Pedido pelo WhatsApp","description":"Simples, rápido e direto"}
     ],
     "sections": {
-      "featured":{"eyebrow":"Queridinhos da casa","title":"Nossos destaques","description":"Uma seleção dos sabores que todo mundo ama."},
-      "catalog":{"eyebrow":"Feito para você","title":"Nosso cardápio","description":"Escolha a versão ideal, toque no + e monte sua sacola."},
-      "kits":{"eyebrow":"Celebre com sabor","title":"Kits & Combos","description":"Combinações para todos os tamanhos de encontro."}
+      "catalog":{"eyebrow":"Escolha com carinho","title":"Nosso cardápio","description":"Bolos, combos, salgados e doces para todos os momentos."}
     },
-    "cta":{"eyebrow":"A sua vitrine digital","title":"Imagine seus produtos aqui.","description":"Um catálogo com a identidade, as categorias e as opções do seu próprio negócio.","image":"","button":{"label":"Explorar o catálogo","href":"#cardapio"}},
+    "cta":{"eyebrow":"Celebre com sabor","title":"Seu pedido, do seu jeito.","description":"Escolha tamanhos, sabores e combinações para montar uma encomenda especial.","image":"","button":{"label":"Montar pedido","href":"#cardapio"}},
     "checkout":{"note":"A mensagem será preparada com todos os dados para você revisar e confirmar no WhatsApp."},
     "footer":{"copyright":"Todos os direitos reservados.","links":[{"label":"Início","href":"#inicio"},{"label":"Cardápio","href":"#cardapio"}]}
   }
