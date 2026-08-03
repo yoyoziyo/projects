@@ -1,0 +1,21 @@
+{
+  "categories": [
+    {"id":"bolos","name":"Bolos","enabled":true},
+    {"id":"doces","name":"Doces finos","enabled":true},
+    {"id":"sobremesas","name":"Sobremesas","enabled":true},
+    {"id":"presentes","name":"Presentes","enabled":true}
+  ],
+  "products": [
+    {"id":"bolo-cacau","categoryId":"bolos","name":"Bolo Cacau Intenso","description":"Massa úmida de cacau, ganache 54% e finalização delicada.","price":89.9,"pricePrefix":"a partir de","image":"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80","imageAlt":"Bolo de chocolate com ganache","tag":"Favorito","featured":true,"available":true},
+    {"id":"bolo-frutas","categoryId":"bolos","name":"Bolo Jardim de Frutas","description":"Baunilha, creme leve e frutas frescas da estação.","price":96,"pricePrefix":"a partir de","image":"https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=80","imageAlt":"Bolo decorado com frutas","available":true},
+    {"id":"bolo-red","categoryId":"bolos","name":"Red Velvet Maison","description":"Massa aveludada, cream cheese suave e frutas vermelhas.","price":104,"pricePrefix":"a partir de","image":"https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=900&q=80","imageAlt":"Fatia de red velvet","tag":"Novo","available":true},
+    {"id":"brigadeiro-origem","categoryId":"doces","name":"Brigadeiro Origem","description":"Chocolate brasileiro, granulado artesanal e textura cremosa.","price":4.9,"image":"https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=900&q=80","imageAlt":"Doces de chocolate artesanais","featured":true,"available":true},
+    {"id":"tartelete-limao","categoryId":"doces","name":"Tartelete de Limão","description":"Massa amanteigada, creme cítrico e merengue tostado.","price":13.5,"image":"https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=900&q=80","imageAlt":"Tarteletes artesanais","available":true},
+    {"id":"macarons","categoryId":"doces","name":"Macarons da Estação","description":"Caixa com seis unidades em sabores selecionados.","price":42,"image":"https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=900&q=80","imageAlt":"Macarons coloridos","tag":"Edição limitada","available":true},
+    {"id":"panna-cotta","categoryId":"sobremesas","name":"Panna Cotta de Baunilha","description":"Baunilha natural, coulis de frutas vermelhas e crocante de amêndoas.","price":22,"image":"https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80","imageAlt":"Sobremesa cremosa com frutas","available":true},
+    {"id":"tiramisu","categoryId":"sobremesas","name":"Tiramisù Clássico","description":"Mascarpone, café especial, cacau e biscoito delicado.","price":26,"image":"https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=900&q=80","imageAlt":"Tiramisù com cacau","featured":true,"available":true},
+    {"id":"kit-celebrar","categoryId":"presentes","name":"Kit Celebrar","description":"Bolo pequeno, seis doces finos e cartão personalizado.","price":149,"image":"https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=900&q=80","imageAlt":"Seleção de doces para presente","tag":"Presenteável","featured":true,"kit":true,"available":true},
+    {"id":"caixa-afeto","categoryId":"presentes","name":"Caixa Afeto","description":"Doze doces autorais em embalagem premium para presentear.","price":78,"image":"https://images.unsplash.com/photo-1548907040-4baa42d10919?auto=format&fit=crop&w=900&q=80","imageAlt":"Caixa elegante de chocolates","kit":true,"available":true},
+    {"id":"experiencia-maison","categoryId":"presentes","name":"Experiência Maison","description":"Curadoria completa com bolo, sobremesas e doces para até seis pessoas.","price":219,"image":"https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=900&q=80","imageAlt":"Mesa de celebração com bolo","kit":true,"available":true}
+  ]
+}
