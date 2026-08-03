@@ -1,3 +1,4 @@
+
 const qs=(selector,root=document)=>root.querySelector(selector);
 const money=(value,currency='BRL',locale='pt-BR')=>new Intl.NumberFormat(locale,{style:'currency',currency}).format(value);
 
@@ -54,12 +55,12 @@ function slug(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,''
 
 function card(product,category,config,onAdd){
   const node=qs('#product-card-template').content.cloneNode(true);
-  const variants=getVariants(product);const select=qs('.variant-select',node);const price=qs('.product-price',node);const visual=qs('.product-image-wrap',node);
+  const variants=getVariants(product);const variantField=qs('.variant-field',node);const select=qs('.variant-select',node);const price=qs('.product-price',node);const visual=qs('.product-image-wrap',node);
   const flavorField=qs('.flavor-field',node);const flavorSelect=qs('.flavor-select',node);const extraField=qs('.extra-field',node);const extraCheckbox=qs('.extra-checkbox',node);
   visual.classList.add(`visual-${category.id}`);qs('.product-symbol',node).textContent=product.name.split(/\s+/).slice(0,2).map(word=>word[0]).join('').toUpperCase();
   qs('.product-tag',node).textContent=product.tag||'';qs('.product-category',node).textContent=category.name;qs('.product-name',node).textContent=product.name;qs('.product-description',node).textContent=product.description;
   qs('.product-from',node).textContent=variants.length>1?'a partir de':'valor';
-  select.setAttribute('aria-label',`Escolha uma opção para ${product.name}`);flavorSelect.setAttribute('aria-label',`Escolha o sabor de ${product.name}`);select.innerHTML=variants.map(v=>`<option value="${v.id}">${v.label}</option>`).join('');
+  variantField.hidden=variants.length<=1;select.setAttribute('aria-label',`Escolha uma opção para ${product.name}`);flavorSelect.setAttribute('aria-label',`Escolha o sabor de ${product.name}`);select.innerHTML=variants.map(v=>`<option value="${v.id}">${v.label}</option>`).join('');
   if(product.flavors?.length){flavorField.hidden=false;flavorSelect.setAttribute('aria-label',`Escolha o sabor de ${product.name}`);flavorSelect.innerHTML=product.flavors.map(flavor=>`<option value="${slug(flavor)}">${flavor}</option>`).join('')}
   if(product.extra){extraField.hidden=false;qs('.extra-label',node).textContent=`${product.extra.label} (+${money(product.extra.price,config.currency,config.locale)})`;extraCheckbox.setAttribute('aria-label',`${product.extra.label} em ${product.name}`)}
   const selectedVariant=()=>{
@@ -85,3 +86,4 @@ export function renderCatalog(data,config,onAdd){
 }
 
 export {money};
+
