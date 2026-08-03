@@ -7,6 +7,10 @@ Primeira versão comercial do catálogo estático e reutilizável da YOITES. A d
 - `data/config.json`: empresa, tema, textos, imagens, contato, entrega e pagamentos.
 - `data/products.json`: categorias, produtos, preços, destaques, kits e disponibilidade.
 
+Cada produto pode declarar `variants`, permitindo opções como 50, 100 ou 150 unidades, tamanhos, pesos e versões diferentes. Cada variante possui seu próprio preço e entra separadamente na sacola.
+
+As imagens também são definidas no JSON. A demonstração inclui uma hero original em `assets/images/`; fotos de produtos podem ser substituídas por URL sem alterar o HTML ou JavaScript.
+
 Não é necessário alterar HTML ou JavaScript para lançar uma nova marca.
 
 ## Modo demonstração
