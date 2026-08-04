@@ -1,4 +1,3 @@
-
 {
   "id":"./",
   "name":"Lai-iara Gourmet",
@@ -8,8 +7,7 @@
   "start_url":"./",
   "scope":"./",
   "display":"standalone",
-  "background_color":"#fffaf3",
-  "theme_color":"#ff6500",
+  "background_color":"#fffafb",
+  "theme_color":"#ff5f98",
   "icons":[{"src":"./assets/img/logo-lai-iara.png","sizes":"1024x1024","type":"image/png","purpose":"any maskable"}]
 }
-
