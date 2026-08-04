@@ -4,9 +4,9 @@ import {setupCheckout,updateCheckoutSummary} from './checkout.release-20260804-2
 
 const qs=selector=>document.querySelector(selector);let config;let toastTimer;
 const resources={
-  config:new URL('../../data/config.release-20260804-1.json',import.meta.url),
-  categories:new URL('../../data/categories.release-20260803.json',import.meta.url),
-  products:new URL('../../data/products.release-20260803-2.json',import.meta.url)
+  config:new URL('../../data/config.json',import.meta.url),
+  categories:new URL('../../data/categories.json',import.meta.url),
+  products:new URL('../../data/products.json',import.meta.url)
 };
 
 function setResourceState(name,state){const item=qs(`[data-resource-status="${name}"]`);if(!item)return;item.dataset.state=state;item.querySelector('span').textContent=state==='ready'?'✓':state==='error'?'!':''}
@@ -43,3 +43,4 @@ async function bootstrap(){
 }
 
 qs('[data-retry]').addEventListener('click',()=>location.reload());bootstrap();
+

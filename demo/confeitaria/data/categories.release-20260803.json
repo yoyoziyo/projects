@@ -1,8 +1,0 @@
-
-[
-  {"id":"bolos","name":"Bolos","description":"Encomendas com antecedência","enabled":true},
-  {"id":"combos","name":"Combos","description":"Combinações prontas para compartilhar","enabled":true},
-  {"id":"salgados","name":"Salgados","description":"Fritos, crus e assados para sua ocasião","enabled":true},
-  {"id":"doces","name":"Doces","description":"Doces para festa sob encomenda","enabled":true}
-]
-
