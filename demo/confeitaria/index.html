@@ -49,7 +49,6 @@
         <p class="hero-copy" data-hero-copy>Bolos, doces, salgados e combos preparados para transformar encontros simples em momentos deliciosos.</p>
         <div class="button-row"><a class="button button-primary" data-hero-primary href="#cardapio">Ver cardápio</a><a class="button button-ghost" data-hero-secondary href="#combos">Ver combos</a></div>
       </div>
-      <div class="hero-banner-visual" data-hero-banner aria-hidden="true"><span class="hero-banner-placeholder">Seu banner aqui</span></div>
     </section>
 
     <section class="trust-strip" aria-label="Benefícios" data-benefits>
@@ -113,6 +112,10 @@
       <div class="form-section-title"><span>02</span><strong>Entrega</strong></div>
       <fieldset><legend>Como deseja receber?</legend><div class="choice-grid" data-delivery-options></div></fieldset>
       <div class="address-fields" data-address-fields><label>Endereço<input name="address" autocomplete="street-address"></label><div class="field-grid field-grid-address"><label>Número<input name="addressNumber" inputmode="numeric" autocomplete="address-line2"></label><label>Bairro<input name="district" autocomplete="address-level3"></label></div><label>Complemento <span class="optional">opcional</span><input name="complement" autocomplete="address-line2"></label></div>
+      <div class="schedule-option">
+        <label class="schedule-toggle"><input type="checkbox" name="scheduled" value="yes" data-schedule-toggle><span><strong>Agendar pedido</strong><small>Escolha uma data para entrega ou retirada</small></span></label>
+        <label class="schedule-date" data-schedule-fields hidden>Data do agendamento<input name="scheduleDate" type="date" data-schedule-date></label>
+      </div>
       <div class="form-section-title"><span>03</span><strong>Pagamento e revisão</strong></div>
       <label>Forma de pagamento<select name="payment" required data-payment-options></select></label>
       <label>Observações<textarea name="notes" rows="3" placeholder="Ex.: retirar ingrediente, ponto de referência..."></textarea></label>
