@@ -24,7 +24,7 @@
   <link rel="canonical" href="https://yoites.com/demo/confeitaria/">
   <link rel="icon" type="image/png" href="./assets/img/logo-lai-iara.png">
   <link rel="apple-touch-icon" href="./assets/img/logo-lai-iara.png">
-  <link rel="stylesheet" href="./assets/css/styles.release-20260803-5.css">
+  <link rel="stylesheet" href="./assets/css/styles.release-20260803-6.css">
   <link rel="manifest" href="./manifest.webmanifest">
   <title>Lai-iara Gourmet | Doces, Salgados, Bolos e Combos</title>
 </head>
@@ -124,10 +124,17 @@
   <template id="product-card-template">
     <article class="product-card">
       <div class="product-image-wrap"><span class="product-orbit" aria-hidden="true"></span><span class="product-symbol" aria-hidden="true"></span><span class="product-tag"></span></div>
-      <div class="product-content"><p class="product-category"></p><h4 class="product-name"></h4><p class="product-description"></p><label class="variant-field"><span>Escolha uma opção</span><select class="variant-select"></select></label><label class="flavor-field" hidden><span>Escolha o sabor</span><select class="flavor-select"></select></label><label class="extra-field" hidden><input class="extra-checkbox" type="checkbox"><span class="extra-label"></span></label><div class="product-footer"><div><span class="product-from"></span><strong class="product-price"></strong></div><button class="add-button" type="button" aria-label="Adicionar à sacola">+</button></div></div>
+      <div class="product-content"><p class="product-category"></p><h4 class="product-name"></h4><p class="product-description"></p><button class="product-options-trigger" type="button" hidden>Escolha uma opção</button><div class="product-footer"><div><span class="product-from"></span><strong class="product-price"></strong></div><button class="add-button" type="button" aria-label="Adicionar à sacola">+</button></div></div>
     </article>
+    <dialog class="product-options-dialog">
+      <form class="product-options-form" method="dialog">
+        <header class="product-options-header"><div><p class="eyebrow">Personalize seu pedido</p><h2 class="product-options-title"></h2></div><button class="icon-button product-options-close" type="button" aria-label="Fechar opções">×</button></header>
+        <div class="product-options-body"><label class="variant-field"><span>Opção</span><select class="variant-select"></select></label><label class="flavor-field" hidden><span>Sabor</span><select class="flavor-select"></select></label><div class="choice-groups"></div><label class="extra-field" hidden><input class="extra-checkbox" type="checkbox"><span class="extra-label"></span></label></div>
+        <footer class="product-options-footer"><button class="button button-ghost product-options-cancel" type="button">Cancelar</button><button class="button button-primary" type="submit">Confirmar opções</button></footer>
+      </form>
+    </dialog>
   </template>
   <script type="application/ld+json" data-schema>{"@context":"https://schema.org","@type":"Bakery","name":"Lai-iara Gourmet","description":"Doces, salgados, bolos e combos preparados com amor.","url":"https://yoites.com/demo/confeitaria/"}</script>
-  <script type="module" src="./assets/js/app.release-20260803-4.js"></script>
+  <script type="module" src="./assets/js/app.release-20260803-5.js"></script>
 </body>
 </html>
