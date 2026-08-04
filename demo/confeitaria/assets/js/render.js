@@ -55,6 +55,17 @@ export function applyConfig(config){
 function getVariants(product){return product.variants?.length?product.variants:[{id:'padrao',label:'Padrão',price:product.price??0}]}
 function slug(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'')}
 
+function setupProductRail(grid,categoryName){
+  const shell=document.createElement('div');const controls=document.createElement('div');const previous=document.createElement('button');const next=document.createElement('button');
+  shell.className='product-rail-shell';controls.className='product-rail-controls';previous.className='product-rail-button product-rail-previous';next.className='product-rail-button product-rail-next';
+  previous.type=next.type='button';previous.innerHTML='<span aria-hidden="true">&#8249;</span>';next.innerHTML='<span aria-hidden="true">&#8250;</span>';previous.setAttribute('aria-label',`Ver produtos anteriores de ${categoryName}`);next.setAttribute('aria-label',`Ver próximos produtos de ${categoryName}`);
+  controls.append(previous,next);shell.append(grid,controls);
+  const update=()=>{const max=Math.max(0,grid.scrollWidth-grid.clientWidth);const hasOverflow=max>2;shell.classList.toggle('has-overflow',hasOverflow);previous.disabled=!hasOverflow||grid.scrollLeft<=2;next.disabled=!hasOverflow||grid.scrollLeft>=max-2};
+  const move=direction=>grid.scrollBy({left:direction*Math.max(grid.clientWidth*.82,260),behavior:'smooth'});
+  previous.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));grid.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update,{passive:true});requestAnimationFrame(update);
+  return shell;
+}
+
 function card(product,category,config,onAdd){
   const node=qs('#product-card-template').content.cloneNode(true);
   const variants=getVariants(product);const choiceGroups=product.choiceGroups??[];const variantField=qs('.variant-field',node);const select=qs('.variant-select',node);const price=qs('.product-price',node);const visual=qs('.product-image-wrap',node);const productImage=qs('.product-image',node);
@@ -92,7 +103,7 @@ export function renderCatalog(data,config,onAdd){
     const categoryProducts=products.filter(product=>product.categoryId===category.id);if(!categoryProducts.length)return;
     const group=document.createElement('section');const heading=document.createElement('h3');const description=document.createElement('p');const grid=document.createElement('div');
     const headingId=`categoria-${category.id}`;group.className='category-group';group.id=category.id;group.setAttribute('aria-labelledby',headingId);heading.id=headingId;heading.textContent=category.name;description.className='category-description';description.textContent=category.description||'';grid.className='product-grid';
-    categoryProducts.forEach(product=>grid.append(card(product,category,config,onAdd)));group.append(heading);if(category.description)group.append(description);group.append(grid);catalog.append(group);
+    categoryProducts.forEach(product=>grid.append(card(product,category,config,onAdd)));group.append(heading);if(category.description)group.append(description);group.append(setupProductRail(grid,category.name));catalog.append(group);
   });
   catalog.setAttribute('aria-busy','false');
 }
