@@ -2,7 +2,7 @@
   "demoMode": true,
   "demoWhatsapp": "5515992370059",
   "business": {
-    "name": "Lai-iara Gourmet",
+    "name": "Sua Marca",
     "logo": "./assets/img/logo-lai-iara.png",
     "logoText": "LG",
     "tagline": "Doces e salgados",
@@ -10,12 +10,12 @@
     "address": "Sua localização"
   },
   "seo": {
-    "title": "Lai-iara Gourmet | Doces, Salgados, Bolos e Combos",
-    "description": "Conheça o cardápio da Lai-iara Gourmet: bolos, doces, salgados e combos para festas e momentos especiais. Monte seu pedido online e envie pelo WhatsApp.",
-    "socialDescription": "Qualidade e sabor em cada mordida. Escolha bolos, doces, salgados e combos da Lai-iara Gourmet.",
+    "title": "Sua Marca | Doces, Salgados, Bolos e Combos",
+    "description": "Conheça o cardápio da Sua Marca: bolos, doces, salgados e combos para festas e momentos especiais. Monte seu pedido online e envie pelo WhatsApp.",
+    "socialDescription": "Qualidade e sabor em cada mordida. Escolha bolos, doces, salgados e combos da Sua Marca.",
     "url": "https://yoites.com/demo/confeitaria/",
     "image": "https://yoites.com/demo/confeitaria/assets/img/og-lai-iara-gourmet.png",
-    "imageAlt": "Lai-iara Gourmet — Doces, Salgados, Bolos e Combos"
+    "imageAlt": "Sua Marca — Doces, Salgados, Bolos e Combos"
   },
   "locale": "pt-BR",
   "currency": "BRL",
@@ -43,7 +43,7 @@
     ]
   },
   "content": {
-    "announcement":"♡ Seja bem-vindo à Lai-iara Gourmet! ♡ Delícias feitas com amor para adoçar o seu dia!",
+    "announcement":"♡ Seja bem-vindo à Sua Marca! ♡ Delícias feitas com amor para adoçar o seu dia!",
     "navigation": [
       {"label":"Início","href":"#inicio"},
       {"label":"Bolos","href":"#bolos"},
@@ -66,7 +66,7 @@
       {"icon":"◉","title":"Pedido pelo WhatsApp","description":"Rápido e direto"}
     ],
     "sections": {
-      "catalog":{"eyebrow":"Escolha seus favoritos","title":"Cardápio Lai-iara","description":"Bolos, combos, salgados e doces para todos os momentos."}
+      "catalog":{"eyebrow":"Escolha seus favoritos","title":"Cardápio Sua Marca","description":"Bolos, combos, salgados e doces para todos os momentos."}
     },
     "cta":{"eyebrow":"Feito com amor","title":"O sabor que o seu momento merece.","description":"Escolha tamanhos, sabores e combinações para montar uma encomenda especial.","image":"","button":{"label":"Montar pedido","href":"#cardapio"}},
     "checkout":{"note":"A mensagem será preparada com todos os dados para você revisar e confirmar no WhatsApp."},
