@@ -1,0 +1,79 @@
+{
+  "demoMode": true,
+  "demoWhatsapp": "5515992370059",
+  "business": {
+    "name": "(nome)",
+    "logo": "",
+    "logoText": "N",
+    "tagline": "Doces e salgados",
+    "description": "Doces, salgados, bolos e combos preparados com carinho para deixar cada momento mais saboroso.",
+    "address": "Selecione uma unidade"
+  },
+  "seo": {
+    "title": "(nome) | Doces, Salgados, Bolos e Combos",
+    "description": "Conheça o catálogo de (nome): bolos, doces, salgados e combos para festas e momentos especiais.",
+    "socialDescription": "Qualidade e sabor em cada mordida.",
+    "url": "https://yoites.com/demo/confeitaria2/",
+    "image": "",
+    "imageAlt": ""
+  },
+  "locale": "pt-BR",
+  "currency": "BRL",
+  "theme": {
+    "name": "confeitaria-laranja",
+    "colors": {"primary":"#f97316","accent":"#fb923c","bg":"#fffaf5","surface":"#ffffff","text":"#54260f","muted":"#8b6754","line":"#f2dacb"}
+  },
+  "contact": {
+    "phone": "(15) 99237-0059",
+    "whatsapp": "5515992370059",
+    "socials": [
+      {"label":"Seu Instagram","url":""},
+      {"label":"Seu Facebook","url":""}
+    ]
+  },
+  "units": [
+    {"id":"unidade-1","name":"Unidade 1","district":"Bairro Centro","address":"Endereço da Unidade 1","whatsapp":"5515992370059"},
+    {"id":"unidade-2","name":"Unidade 2","district":"Bairro Jardim","address":"Endereço da Unidade 2","whatsapp":"5515992370059"}
+  ],
+  "fulfillment": {
+    "deliveryMethods": [
+      {"id":"delivery","label":"Entrega","enabled":true,"requiresAddress":true,"fee":0},
+      {"id":"pickup","label":"Retirada","enabled":true,"requiresAddress":false,"fee":0}
+    ],
+    "paymentMethods": [
+      {"id":"pix","label":"PIX","enabled":true},
+      {"id":"card","label":"Cartão","enabled":true},
+      {"id":"cash","label":"Dinheiro","enabled":true}
+    ]
+  },
+  "content": {
+    "announcement":"♡ Seja bem-vindo a (nome)! ♡ Delícias feitas com carinho para adoçar o seu dia!",
+    "navigation": [
+      {"label":"Início","href":"#inicio"},
+      {"label":"Bolos","href":"#bolos"},
+      {"label":"Combos","href":"#combos"},
+      {"label":"Salgados","href":"#salgados"},
+      {"label":"Doces","href":"#doces"}
+    ],
+    "hero": {
+      "eyebrow":"Doces e salgados feitos com carinho",
+      "title":"Qualidade e sabor <em>em cada mordida.</em>",
+      "description":"Bolos, doces, salgados e combos preparados para transformar encontros simples em momentos deliciosos.",
+      "image":"",
+      "primaryCta":{"label":"Ver cardápio","href":"#cardapio"},
+      "secondaryCta":{"label":"Ver combos","href":"#combos"}
+    },
+    "benefits": [
+      {"icon":"♥","title":"Feito com carinho","description":"Cuidado em cada detalhe"},
+      {"icon":"✦","title":"Muito sabor","description":"Receitas para compartilhar"},
+      {"icon":"✓","title":"Encomenda simples","description":"Escolha tudo pelo catálogo"},
+      {"icon":"◉","title":"Pedido pelo WhatsApp","description":"Rápido e direto"}
+    ],
+    "sections": {
+      "catalog":{"eyebrow":"Escolha seus favoritos","title":"Cardápio (nome)","description":"Bolos, combos, salgados e doces para todos os momentos."}
+    },
+    "cta":{"eyebrow":"Feito com carinho","title":"O sabor que o seu momento merece.","description":"Escolha tamanhos, sabores e combinações para montar uma encomenda especial.","image":"","button":{"label":"Montar pedido","href":"#cardapio"}},
+    "checkout":{"note":"A mensagem será preparada com todos os dados para você revisar e confirmar no WhatsApp da unidade selecionada."},
+    "footer":{"copyright":"Todos os direitos reservados.","links":[{"label":"Início","href":"#inicio"},{"label":"Cardápio","href":"#cardapio"}]}
+  }
+}

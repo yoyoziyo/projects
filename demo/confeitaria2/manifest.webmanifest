@@ -1,0 +1,13 @@
+{
+  "id":"./",
+  "name":"(nome)",
+  "short_name":"(nome)",
+  "description":"Catálogo de doces, salgados, bolos e combos.",
+  "lang":"pt-BR",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#fffaf5",
+  "theme_color":"#f97316",
+  "icons":[]
+}
