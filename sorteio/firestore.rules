@@ -1,0 +1,83 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function eventOpen() {
+      return exists(/databases/$(database)/documents/config/evento)
+        && get(/databases/$(database)/documents/config/evento).data.active == true
+        && request.time < get(/databases/$(database)/documents/config/evento).data.closesAt;
+    }
+    function eventClosed() {
+      return exists(/databases/$(database)/documents/config/evento)
+        && get(/databases/$(database)/documents/config/evento).data.active == true
+        && request.time >= get(/databases/$(database)/documents/config/evento).data.closesAt;
+    }
+    function validWinner(winner) {
+      return winner.keys().hasOnly(['id', 'nick'])
+        && exists(/databases/$(database)/documents/participantes/$(winner.id))
+        && get(/databases/$(database)/documents/participantes/$(winner.id)).data.nick == winner.nick;
+    }
+
+    match /config/evento {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /participantes/{nickKey} {
+      allow read: if true;
+      allow create: if signedIn()
+        && eventOpen()
+        && request.resource.data.keys().hasOnly(['nick', 'nickKey', 'uid', 'createdAt'])
+        && request.resource.data.nickKey == nickKey
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.nick is string
+        && request.resource.data.nick.size() >= 2
+        && request.resource.data.nick.size() <= 24
+        && request.resource.data.createdAt == request.time
+        && existsAfter(/databases/$(database)/documents/inscricoes/$(request.auth.uid))
+        && getAfter(/databases/$(database)/documents/inscricoes/$(request.auth.uid)).data.nickKey == nickKey;
+      allow update, delete: if false;
+    }
+
+    match /inscricoes/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow create: if signedIn()
+        && request.auth.uid == uid
+        && eventOpen()
+        && request.resource.data.keys().hasOnly(['nickKey', 'createdAt'])
+        && request.resource.data.createdAt == request.time
+        && existsAfter(/databases/$(database)/documents/participantes/$(request.resource.data.nickKey))
+        && getAfter(/databases/$(database)/documents/participantes/$(request.resource.data.nickKey)).data.uid == uid;
+      allow update, delete: if false;
+    }
+
+    match /resultado/atual {
+      allow read: if true;
+      allow create: if signedIn()
+        && eventClosed()
+        && request.resource.data.keys().hasOnly(['winners', 'participantCount', 'drawnAt', 'drawnBy', 'version'])
+        && request.resource.data.winners is list
+        && request.resource.data.winners.size() == 5
+        && validWinner(request.resource.data.winners[0])
+        && validWinner(request.resource.data.winners[1])
+        && validWinner(request.resource.data.winners[2])
+        && validWinner(request.resource.data.winners[3])
+        && validWinner(request.resource.data.winners[4])
+        && request.resource.data.winners[0].id != request.resource.data.winners[1].id
+        && request.resource.data.winners[0].id != request.resource.data.winners[2].id
+        && request.resource.data.winners[0].id != request.resource.data.winners[3].id
+        && request.resource.data.winners[0].id != request.resource.data.winners[4].id
+        && request.resource.data.winners[1].id != request.resource.data.winners[2].id
+        && request.resource.data.winners[1].id != request.resource.data.winners[3].id
+        && request.resource.data.winners[1].id != request.resource.data.winners[4].id
+        && request.resource.data.winners[2].id != request.resource.data.winners[3].id
+        && request.resource.data.winners[2].id != request.resource.data.winners[4].id
+        && request.resource.data.winners[3].id != request.resource.data.winners[4].id
+        && request.resource.data.participantCount is int
+        && request.resource.data.drawnAt == request.time
+        && request.resource.data.drawnBy == request.auth.uid
+        && request.resource.data.version == 1;
+      allow update, delete: if false;
+    }
+  }
+}
