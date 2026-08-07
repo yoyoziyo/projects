@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070913">
+  <meta name="description" content="Sorteio ao vivo, sincronizado em tempo real.">
+  <title>Sorteio ao vivo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <section id="inactive-screen" class="inactive-screen" hidden>
+    <span class="live-pill offline"><i></i> INATIVO</span>
+    <h1>Sorteio indisponível</h1>
+    <p>Não há um sorteio ativo no momento. Volte em breve.</p>
+  </section>
+
+  <main id="main-content" class="page-shell">
+    <header class="hero">
+      <span class="live-pill"><i></i> AO VIVO</span>
+      <p class="eyebrow">SORTEIO ESPECIAL</p>
+      <h1>Seu nick pode ser<br><span>um dos vencedores.</span></h1>
+      <p class="hero-copy">Inscreva-se uma única vez e acompanhe tudo acontecendo em tempo real.</p>
+    </header>
+
+    <section class="countdown-card" aria-labelledby="countdown-title">
+      <div>
+        <span class="section-label">INSCRIÇÕES ENCERRAM ÀS 22H</span>
+        <h2 id="countdown-title">Tempo restante</h2>
+      </div>
+      <div class="countdown" aria-live="polite">
+        <div><strong id="hours">00</strong><span>horas</span></div>
+        <b>:</b>
+        <div><strong id="minutes">00</strong><span>min</span></div>
+        <b>:</b>
+        <div><strong id="seconds">00</strong><span>seg</span></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card registration-card">
+        <span class="step">01</span>
+        <h2>Garanta sua participação</h2>
+        <p>Digite seu nick exatamente como ele deve aparecer no sorteio.</p>
+        <form id="join-form" novalidate>
+          <label for="nickname">Seu nick</label>
+          <div class="input-row">
+            <input id="nickname" name="nickname" type="text" minlength="2" maxlength="24" autocomplete="nickname" placeholder="Ex: Player123" required>
+            <button id="join-button" type="submit">Participar <span>→</span></button>
+          </div>
+          <p id="form-message" class="form-message" role="status"></p>
+        </form>
+        <div id="registered-state" class="registered-state" hidden>
+          <span>✓</span>
+          <div><small>VOCÊ ESTÁ PARTICIPANDO COMO</small><strong id="registered-nick"></strong></div>
+        </div>
+      </article>
+
+      <article class="card participants-card">
+        <div class="card-heading">
+          <div><span class="step">02</span><h2>Participantes</h2></div>
+          <span class="counter"><strong id="participant-count">0</strong> inscritos</span>
+        </div>
+        <div id="participants" class="participants" aria-live="polite">
+          <p class="empty-state">Aguardando os primeiros participantes…</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="draw-section" class="draw-section" aria-labelledby="draw-title">
+      <span class="step">03</span>
+      <p class="section-label">RESULTADO GLOBAL</p>
+      <h2 id="draw-title">O sorteio será realizado às 22h</h2>
+      <p id="draw-status">A roleta abaixo mostra todos que já estão participando. O resultado será atualizado para todos ao mesmo tempo.</p>
+
+      <div id="roulette" class="roulette" aria-live="polite">
+        <div class="selection-marker"></div>
+        <div id="roulette-track" class="roulette-track">
+          <div class="roulette-item muted">Aguardando o sorteio</div>
+        </div>
+      </div>
+
+      <div id="winners" class="winners" hidden>
+        <p class="section-label">PARABÉNS AOS 5 VENCEDORES</p>
+        <ol id="winner-list"></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer id="page-footer">Resultado único e sincronizado pelo Firebase.</footer>
+
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
