@@ -129,7 +129,10 @@ function renderParticipants() {
 
 function renderRoulettePreview() {
   if (hasOfficialResult || activeDrawId) return;
-  drawWheel(participants, 0);
+  // Mantém a primeira fatia presa ao ponteiro quando novos nicks entram.
+  // A roleta só recebe movimento durante o sorteio oficial.
+  const anchoredRotation = participants.length ? -Math.PI / participants.length : 0;
+  drawWheel(participants, anchoredRotation);
 }
 
 function drawWheel(people, rotation = 0) {
