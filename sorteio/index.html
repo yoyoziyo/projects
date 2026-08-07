@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#070913">
-  <meta name="description" content="Sorteio ao vivo, sincronizado em tempo real.">
+  <meta name="description" content="Sorteio Yoites ao vivo.">
   <title>Sorteio ao vivo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,21 +79,25 @@
       <h2 id="draw-title">O sorteio será realizado às 22h</h2>
       <p id="draw-status">A roleta abaixo mostra todos que já estão participando. O resultado será atualizado para todos ao mesmo tempo.</p>
 
-      <div id="roulette" class="roulette" aria-live="polite">
-        <div class="selection-marker"></div>
-        <div id="roulette-track" class="roulette-track">
-          <div class="roulette-item muted">Aguardando o sorteio</div>
-        </div>
+      <div id="roulette" class="wheel-wrap" aria-live="polite">
+        <div class="wheel-pointer" aria-hidden="true"></div>
+        <canvas id="wheel-canvas" width="640" height="640" aria-label="Roleta com os participantes"></canvas>
+        <div class="wheel-center" aria-hidden="true">🎁</div>
       </div>
 
-      <div id="winners" class="winners" hidden>
-        <p class="section-label">PARABÉNS AOS 5 VENCEDORES</p>
-        <ol id="winner-list"></ol>
+      <div class="draw-time">
+        <span class="clock-icon" aria-hidden="true"></span>
+        <div><small>RESULTADO ÀS</small><strong>22h</strong></div>
+      </div>
+
+      <div id="winners" class="winners">
+        <p class="section-label">🏆 GANHADORES</p>
+        <ol id="winner-list">
+          <li class="waiting">-</li><li class="waiting">-</li><li class="waiting">-</li><li class="waiting">-</li><li class="waiting">-</li>
+        </ol>
       </div>
     </section>
   </main>
-
-  <footer id="page-footer">Resultado único e sincronizado pelo Firebase.</footer>
 
   <script type="module" src="assets/js/app.js"></script>
 </body>
