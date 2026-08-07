@@ -118,9 +118,39 @@ button:disabled, input:disabled { cursor: not-allowed; opacity: .55; }
   .card { padding: 25px; }
   .input-row { flex-direction: column; }
   button { height: 49px; }
-  .wheel-wrap { width:min(540px, 88vw); margin-top:40px; }
+  .draw-section { padding:42px 16px 28px; }
+  .draw-section h2 { padding-inline:8px; line-height:1.08; }
+  .draw-section > p:not(.section-label) { padding-inline:8px; }
+  .wheel-wrap { width:calc(100% - 12px); max-width:540px; margin:40px auto 20px; }
   .wheel-pointer { width:42px; height:57px; top:-15px; }
   .wheel-pointer::after { width:13px; height:13px; top:13px; }
   .wheel-center { border-width:3px; }
-  .winners { padding:18px 14px; }
+  .draw-time { width:calc(100% - 12px); gap:18px; padding:16px 18px; }
+  .draw-time div { padding-left:18px; }
+  .draw-time strong { font-size:32px; }
+  .clock-icon { width:44px; height:44px; border-width:4px; }
+  .clock-icon::before { left:17px; top:7px; height:14px; }
+  .clock-icon::after { left:19px; top:20px; }
+  .winners { width:calc(100% - 12px); padding:18px 12px; }
+  .winners li { padding-right:42px; padding-left:54px; }
+}
+
+@media (max-width: 390px) {
+  .page-shell { width:min(100% - 20px, 1120px); }
+  .hero { margin-bottom:34px; }
+  .hero-copy { font-size:14px; }
+  .countdown-card { padding:22px 14px; }
+  .countdown { gap:7px; }
+  .countdown div { min-width:58px; }
+  .countdown strong { font-size:27px; }
+  .card { padding:22px 18px; }
+  .card-heading { align-items:flex-start; }
+  .card-heading > div { align-items:flex-start; }
+  .draw-section { padding-inline:10px; }
+  .wheel-wrap, .draw-time, .winners { width:calc(100% - 8px); }
+  .wheel-pointer { width:38px; height:52px; }
+  .wheel-center { font-size:2rem; }
+  .draw-time { gap:14px; padding-inline:14px; }
+  .draw-time div { padding-left:14px; }
+  .winners li { min-height:46px; }
 }
