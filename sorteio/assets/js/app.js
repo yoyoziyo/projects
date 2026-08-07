@@ -13,8 +13,8 @@ const db = getFirestore(app);
 const el = Object.fromEntries([
   "hours", "minutes", "seconds", "join-form", "nickname", "join-button", "form-message",
   "registered-state", "registered-nick", "participant-count", "participants", "draw-section",
-  "draw-title", "draw-status", "roulette-track", "winners", "winner-list", "inactive-screen",
-  "main-content", "page-footer"
+  "draw-title", "draw-status", "wheel-canvas", "winners", "winner-list", "inactive-screen",
+  "main-content"
 ].map(id => [id, document.getElementById(id)]));
 
 let currentUser = null;
@@ -129,22 +129,75 @@ function renderParticipants() {
 
 function renderRoulettePreview() {
   if (hasOfficialResult || activeDrawId) return;
-  el["roulette-track"].getAnimations().forEach(animation => animation.cancel());
-  el["roulette-track"].style.transform = "translateX(0)";
-  if (!participants.length) {
-    const item = document.createElement("div");
-    item.className = "roulette-item muted";
-    item.textContent = "Aguardando participantes";
-    el["roulette-track"].replaceChildren(item);
+  drawWheel(participants, 0);
+}
+
+function drawWheel(people, rotation = 0) {
+  const canvas = el["wheel-canvas"];
+  const context = canvas.getContext("2d");
+  const size = canvas.width;
+  const center = size / 2;
+  const radius = center - 12;
+  context.clearRect(0, 0, size, size);
+
+  if (!people.length) {
+    context.beginPath();
+    context.arc(center, center, radius, 0, Math.PI * 2);
+    context.fillStyle = "#17142f";
+    context.fill();
+    context.strokeStyle = "#8d50f5";
+    context.lineWidth = 3;
+    context.stroke();
+    context.fillStyle = "#999fb4";
+    context.font = "600 20px Inter, sans-serif";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillText("Aguardando participantes", center, center - radius * .46);
     return;
   }
-  const items = participants.map(person => {
-    const item = document.createElement("div");
-    item.className = "roulette-item";
-    item.textContent = person.nick;
-    return item;
+
+  const arc = (Math.PI * 2) / people.length;
+  const fontSize = Math.max(9, Math.min(22, 185 / Math.sqrt(people.length)));
+  people.forEach((person, index) => {
+    const start = rotation + index * arc - Math.PI / 2;
+    const end = start + arc;
+    context.beginPath();
+    context.moveTo(center, center);
+    context.arc(center, center, radius, start, end);
+    context.closePath();
+    const gradient = context.createRadialGradient(center, center, radius * .1, center, center, radius);
+    if (index % 2 === 0) {
+      gradient.addColorStop(0, "#47208f");
+      gradient.addColorStop(1, "#7d3de2");
+    } else {
+      gradient.addColorStop(0, "#12152d");
+      gradient.addColorStop(1, "#29205a");
+    }
+    context.fillStyle = gradient;
+    context.fill();
+    context.strokeStyle = "rgba(173, 118, 255, .55)";
+    context.lineWidth = 1.5;
+    context.stroke();
+
+    const middle = start + arc / 2;
+    context.save();
+    context.translate(center, center);
+    context.rotate(middle + Math.PI / 2);
+    context.translate(0, -radius * .72);
+    context.fillStyle = "#ffffff";
+    context.font = `700 ${fontSize}px Inter, sans-serif`;
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    const label = person.nick.length > 16 ? `${person.nick.slice(0, 15)}…` : person.nick;
+    context.fillText(label, 0, 0, Math.max(55, radius * arc * .72));
+    context.restore();
   });
-  el["roulette-track"].replaceChildren(...items);
+
+  context.beginPath();
+  context.arc(center, center, radius, 0, Math.PI * 2);
+  context.strokeStyle = "#a260ff";
+  context.lineWidth = 4;
+  context.stroke();
 }
 
 function randomIndex(max) {
@@ -202,7 +255,6 @@ function setSiteActive(active) {
   eventActive = active;
   el["inactive-screen"].hidden = active;
   el["main-content"].hidden = !active;
-  el["page-footer"].hidden = !active;
   if (active) startCountdown();
   else updateCountdown();
 }
@@ -215,39 +267,36 @@ function showWinners(winners) {
     return li;
   }));
   el.winners.hidden = false;
+  const wheelPeople = participants.length ? participants : winners;
+  const selectedIndex = Math.max(0, wheelPeople.findIndex(person => person.id === winners[0].id));
+  const arc = (Math.PI * 2) / wheelPeople.length;
+  drawWheel(wheelPeople, -(selectedIndex + .5) * arc);
   el["draw-title"].textContent = "Temos nossos vencedores!";
-  el["draw-status"].textContent = "Este é o resultado oficial e único do sorteio.";
+  el["draw-status"].textContent = "Confira abaixo os cinco ganhadores.";
 }
 
 function animateRoulette(draw, drawnAt) {
   if (activeDrawId === draw.id) return;
   activeDrawId = draw.id;
-  el.winners.hidden = true;
+  el["winner-list"].innerHTML = '<li class="waiting">-</li><li class="waiting">-</li><li class="waiting">-</li><li class="waiting">-</li><li class="waiting">-</li>';
   el["draw-title"].textContent = "Sorteando ao vivo…";
-  el["draw-status"].textContent = "A mesma animação está acontecendo para todos os participantes.";
+  el["draw-status"].textContent = "Aguarde a roleta parar.";
   el["draw-section"].scrollIntoView({ behavior: "smooth", block: "center" });
 
   const pool = participants.length ? participants : draw.winners;
-  const sequence = Array.from({ length: 45 }, (_, i) => pool[i % pool.length]);
-  sequence.splice(-5, 5, ...draw.winners);
-  const items = sequence.map(person => {
-    const item = document.createElement("div");
-    item.className = "roulette-item";
-    item.textContent = person.nick;
-    return item;
-  });
-  el["roulette-track"].replaceChildren(...items);
   const duration = 9000;
-  const elapsed = Math.max(0, Date.now() - drawnAt);
-  const finalOffset = -(sequence.length - 3) * 180;
-  el["roulette-track"].getAnimations().forEach(animation => animation.cancel());
-  const animation = el["roulette-track"].animate([
-    { transform: "translateX(200px)" },
-    { transform: `translateX(${finalOffset}px)` }
-  ], { duration, easing: "cubic-bezier(.08,.68,.08,1)", fill: "forwards" });
-  // Coloca cada navegador no mesmo ponto da animação usando o horário oficial do servidor.
-  animation.currentTime = Math.min(elapsed, duration);
-  setTimeout(() => showWinners(draw.winners), Math.max(0, duration - elapsed) + 200);
+  const selectedIndex = Math.max(0, pool.findIndex(person => person.id === draw.winners[0].id));
+  const arc = (Math.PI * 2) / pool.length;
+  const finalRotation = Math.PI * 2 * 10 - (selectedIndex + .5) * arc;
+  const animate = () => {
+    const elapsed = Math.max(0, Date.now() - drawnAt);
+    const progress = Math.min(1, elapsed / duration);
+    const eased = 1 - Math.pow(1 - progress, 4);
+    drawWheel(pool, finalRotation * eased);
+    if (progress < 1) requestAnimationFrame(animate);
+    else setTimeout(() => showWinners(draw.winners), 180);
+  };
+  requestAnimationFrame(animate);
 }
 
 onSnapshot(doc(db, "config", "evento"), snapshot => {
