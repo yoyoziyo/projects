@@ -1,5 +1,5 @@
 import {addItem,updateQuantity,removeItem,cartTotal,getCart,subscribe} from './store.release-20260804-1.js';
-import {applyConfig,renderCatalog,money} from './render.release-20260804-2.js?v=20260804-1';
+import {applyConfig,renderCatalog,money} from './render.release-20260804-2.js?v=20260808-1';
 import {setupCheckout,updateCheckoutSummary} from './checkout.release-20260804-2.js?v=20260804-3';
 
 const qs=selector=>document.querySelector(selector);let config;let toastTimer;
