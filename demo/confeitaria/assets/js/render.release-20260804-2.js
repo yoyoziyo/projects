@@ -34,6 +34,9 @@ export function applyConfig(config){
   Object.entries(theme.colors).forEach(([key,value])=>document.documentElement.style.setProperty(`--color-${key}`,value));
   setMeta('meta[name="theme-color"]',theme.colors.primary);
   const brandName=qs('[data-brand-name]');const brandMark=qs('[data-brand-mark]');if(brandName)brandName.textContent=business.name;if(brandMark)brandMark.textContent=business.logoText||business.name.charAt(0);
+  const brandDisplay=qs('[data-brand-display]');if(brandDisplay)brandDisplay.textContent=business.name;
+  const businessType=qs('[data-business-type]');if(businessType)businessType.textContent=business.type||business.tagline||'Confeitaria';
+  const businessAddress=qs('[data-business-address]');if(businessAddress)businessAddress.textContent=business.address;
   document.querySelectorAll('[data-brand-logo]').forEach(logo=>{logo.src=business.logo;logo.alt=`Logo ${business.name}`});
   const announcement=qs('[data-announcement]');if(announcement)announcement.textContent=content.announcement||`♡ Seja bem-vindo à ${business.name}! ♡ Delícias feitas com amor para adoçar o seu dia!`;
   qs('[data-nav]').innerHTML=content.navigation.map(item=>`<a href="${item.href}">${item.label}</a>`).join('');
@@ -74,6 +77,7 @@ function card(product,category,config,onAdd){
   visual.classList.add(`visual-${category.id}`);qs('.product-symbol',node).textContent=product.name.split(/\s+/).slice(0,2).map(word=>word[0]).join('').toUpperCase();
   if(product.image){productImage.src=product.image;productImage.alt=product.imageAlt||product.name;productImage.hidden=false;visual.classList.add('has-product-image');productImage.addEventListener('error',()=>{productImage.hidden=true;visual.classList.remove('has-product-image')},{once:true})}
   qs('.product-tag',node).textContent=product.tag||'';qs('.product-category',node).textContent=category.name;qs('.product-name',node).textContent=product.name;qs('.product-description',node).textContent=product.description;
+  qs('.product-card',node).dataset.search=`${product.name} ${product.description||''} ${category.name}`.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   qs('.product-from',node).textContent=variants.length>1?'a partir de':'valor';
   variantField.hidden=variants.length<=1;select.required=variants.length>1;select.setAttribute('aria-label',`Escolha uma opção para ${product.name}`);select.innerHTML=`${variants.length>1?'<option value="">Selecione</option>':''}${variants.map(v=>`<option value="${v.id}">${v.label}</option>`).join('')}`;
   if(product.flavors?.length){flavorField.hidden=false;flavorSelect.required=true;flavorSelect.setAttribute('aria-label',`Escolha o sabor de ${product.name}`);flavorSelect.innerHTML=`<option value="">Selecione</option>${product.flavors.map(flavor=>`<option value="${slug(flavor)}">${flavor}</option>`).join('')}`}

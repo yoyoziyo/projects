@@ -25,6 +25,7 @@
   <link rel="icon" type="image/png" href="./assets/img/logo-lai-iara.png">
   <link rel="apple-touch-icon" href="./assets/img/logo-lai-iara.png">
   <link rel="stylesheet" href="./assets/css/styles.release-20260804-4.css">
+  <link rel="stylesheet" href="./assets/css/mobile-catalog.css?v=20260808-1">
   <style>.site-header .brand-logo{display:block!important;width:76px!important;height:76px!important;max-width:76px!important;max-height:76px!important;flex:0 0 76px!important;object-fit:contain}.footer-logo{display:block!important;width:92px!important;height:92px!important;max-width:92px!important;max-height:92px!important;object-fit:contain}@media(max-width:799px){.site-header .brand-logo{width:56px!important;height:56px!important;max-width:56px!important;max-height:56px!important;flex-basis:56px!important}}</style>
   <link rel="manifest" href="./manifest.webmanifest">
   <title>Sua Marca | Doces, Salgados, Bolos e Combos</title>
@@ -44,12 +45,13 @@
 
   <main id="main">
     <section class="hero" id="inicio" data-hero>
-      <div class="hero-content">
-        <p class="eyebrow" data-hero-eyebrow>Doces e salgados feitos com amor</p>
-        <h1 data-hero-title>Qualidade e sabor <em>em cada mordida.</em></h1>
-        <p class="hero-copy" data-hero-copy>Bolos, doces, salgados e combos preparados para transformar encontros simples em momentos deliciosos.</p>
-        <div class="button-row"><a class="button button-primary" data-hero-primary href="#cardapio">Ver cardápio</a><a class="button button-ghost" data-hero-secondary href="#combos">Ver combos</a></div>
+      <div class="store-cover" aria-hidden="true"><span>Doces para celebrar</span></div>
+      <div class="store-profile">
+        <div class="store-logo" data-brand-mark aria-hidden="true">SM</div>
+        <div class="store-summary"><p class="store-kicker">Catálogo digital</p><h1 data-brand-display>Sua Marca</h1><div class="store-badges"><span class="store-type" data-business-type>Confeitaria</span><span class="store-status"><i></i>Aceitando pedidos</span></div><p class="store-location" data-business-address>Sua localização</p></div>
       </div>
+      <div class="store-services" aria-label="Informações da loja"><span><b>WhatsApp</b><small>Pedido rápido e direto</small></span><span><b>Entrega ou retirada</b><small>Você escolhe no checkout</small></span><span><b>Agendamento</b><small>Escolha a melhor data</small></span></div>
+      <div class="hero-content" hidden><p data-hero-eyebrow></p><h2 data-hero-title></h2><p data-hero-copy></p><a data-hero-primary href="#cardapio"></a><a data-hero-secondary href="#combos"></a></div>
     </section>
 
     <section class="trust-strip" aria-label="Benefícios" data-benefits>
@@ -61,6 +63,7 @@
 
     <section class="section menu-section" id="cardapio" aria-labelledby="catalog-title">
       <div class="section-heading"><p class="eyebrow" data-catalog-eyebrow>Escolha seus favoritos</p><h2 id="catalog-title" data-catalog-title>Cardápio Sua Marca</h2><p data-catalog-copy>Bolos, combos, salgados e doces para todos os momentos.</p></div>
+      <div class="search-panel" data-search-panel hidden><label for="product-search">Buscar no cardápio</label><div><input id="product-search" type="search" inputmode="search" placeholder="Digite o nome de um produto" data-product-search><button type="button" data-search-close aria-label="Fechar busca">×</button></div></div>
 
       <div class="catalog-status" data-load-panel role="status" aria-live="polite">
         <strong data-load-title>Preparando o cardápio…</strong>
@@ -96,6 +99,7 @@
 
   <noscript><div class="noscript-note">O cardápio acima permanece disponível para consulta. Ative o JavaScript para montar a sacola e enviar o pedido pelo WhatsApp.</div></noscript>
   <div class="toast" role="status" aria-live="polite" aria-atomic="true" data-toast></div>
+  <nav class="bottom-nav" aria-label="Navegação principal"><a class="active" href="#cardapio"><span aria-hidden="true">▤</span><small>Cardápio</small></a><button type="button" data-search-toggle><span aria-hidden="true">⌕</span><small>Busca</small></button><button type="button" data-open-cart><span class="bottom-bag" aria-hidden="true"></span><small>Sacola</small><b class="bottom-cart-count" data-cart-count>0</b></button></nav>
   <div class="scrim" data-scrim hidden></div>
 
   <aside class="drawer cart-drawer" data-cart-drawer aria-hidden="true" aria-labelledby="cart-title">

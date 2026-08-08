@@ -3,8 +3,9 @@
   "demoWhatsapp": "5515992370059",
   "business": {
     "name": "Sua Marca",
+    "type": "Confeitaria",
     "logo": "./assets/img/logo-lai-iara.png",
-    "logoText": "LG",
+    "logoText": "SM",
     "tagline": "Doces e salgados",
     "description": "Doces, salgados, bolos e combos preparados com amor para deixar cada momento mais saboroso.",
     "address": "Sua localização"
