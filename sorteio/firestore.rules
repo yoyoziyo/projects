@@ -14,8 +14,10 @@ service cloud.firestore {
     }
     function validWinner(winner) {
       return winner.keys().hasOnly(['id', 'nick'])
-        && exists(/databases/$(database)/documents/participantes/$(winner.id))
-        && get(/databases/$(database)/documents/participantes/$(winner.id)).data.nick == winner.nick;
+        && winner.nick is string
+        && winner.nick.size() >= 2
+        && winner.nick.size() <= 24
+        && exists(/databases/$(database)/documents/participantes/$(winner.id));
     }
 
     match /config/evento {
