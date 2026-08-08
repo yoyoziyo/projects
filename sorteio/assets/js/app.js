@@ -146,9 +146,9 @@ function drawWheel(people, rotation = 0) {
   if (!people.length) {
     context.beginPath();
     context.arc(center, center, radius, 0, Math.PI * 2);
-    context.fillStyle = "#17142f";
+    context.fillStyle = "#202126";
     context.fill();
-    context.strokeStyle = "#8d50f5";
+    context.strokeStyle = "#55575e";
     context.lineWidth = 3;
     context.stroke();
     context.fillStyle = "#999fb4";
@@ -160,7 +160,7 @@ function drawWheel(people, rotation = 0) {
   }
 
   const arc = (Math.PI * 2) / people.length;
-  const fontSize = Math.max(9, Math.min(22, 185 / Math.sqrt(people.length)));
+  const fontSize = Math.max(8, Math.min(18, radius * arc * .24));
   people.forEach((person, index) => {
     const start = rotation + index * arc - Math.PI / 2;
     const end = start + arc;
@@ -170,35 +170,36 @@ function drawWheel(people, rotation = 0) {
     context.closePath();
     const gradient = context.createRadialGradient(center, center, radius * .1, center, center, radius);
     if (index % 2 === 0) {
-      gradient.addColorStop(0, "#47208f");
-      gradient.addColorStop(1, "#7d3de2");
+      gradient.addColorStop(0, "#35373d");
+      gradient.addColorStop(1, "#292b30");
     } else {
-      gradient.addColorStop(0, "#12152d");
-      gradient.addColorStop(1, "#29205a");
+      gradient.addColorStop(0, "#202126");
+      gradient.addColorStop(1, "#17181c");
     }
     context.fillStyle = gradient;
     context.fill();
-    context.strokeStyle = "rgba(173, 118, 255, .55)";
+    context.strokeStyle = "rgba(255, 255, 255, .16)";
     context.lineWidth = 1.5;
     context.stroke();
 
     const middle = start + arc / 2;
     context.save();
     context.translate(center, center);
-    context.rotate(middle + Math.PI / 2);
-    context.translate(0, -radius * .72);
+    context.rotate(middle);
+    context.translate(radius * .66, 0);
+    if (Math.cos(middle) < 0) context.rotate(Math.PI);
     context.fillStyle = "#ffffff";
     context.font = `700 ${fontSize}px Inter, sans-serif`;
     context.textAlign = "center";
     context.textBaseline = "middle";
     const label = person.nick.length > 16 ? `${person.nick.slice(0, 15)}…` : person.nick;
-    context.fillText(label, 0, 0, Math.max(55, radius * arc * .72));
+    context.fillText(label, 0, 0, radius * .48);
     context.restore();
   });
 
   context.beginPath();
   context.arc(center, center, radius, 0, Math.PI * 2);
-  context.strokeStyle = "#a260ff";
+  context.strokeStyle = "#55575e";
   context.lineWidth = 4;
   context.stroke();
 }
