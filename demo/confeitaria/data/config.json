@@ -4,6 +4,7 @@
   "business": {
     "name": "Sua Marca",
     "type": "Confeitaria",
+    "open": true,
     "logo": "./assets/img/logo-lai-iara.png",
     "logoText": "SM",
     "tagline": "Doces e salgados",

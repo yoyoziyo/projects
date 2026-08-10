@@ -37,6 +37,7 @@ export function applyConfig(config){
   const brandDisplay=qs('[data-brand-display]');if(brandDisplay)brandDisplay.textContent=business.name;
   const businessType=qs('[data-business-type]');if(businessType)businessType.textContent=business.type||business.tagline||'Confeitaria';
   const businessAddress=qs('[data-business-address]');if(businessAddress)businessAddress.textContent=business.address;
+  const businessStatus=qs('[data-business-status]');if(businessStatus){const isOpen=business.open!==false;businessStatus.classList.toggle('closed',!isOpen);businessStatus.innerHTML=`<i></i>${isOpen?'Aberto':'Fechado'}`}
   document.querySelectorAll('[data-brand-logo]').forEach(logo=>{logo.src=business.logo;logo.alt=`Logo ${business.name}`});
   const announcement=qs('[data-announcement]');if(announcement)announcement.textContent=content.announcement||`♡ Seja bem-vindo à ${business.name}! ♡ Delícias feitas com amor para adoçar o seu dia!`;
   qs('[data-nav]').innerHTML=content.navigation.map(item=>`<a href="${item.href}">${item.label}</a>`).join('');
