@@ -237,11 +237,98 @@ button { border-radius:9px; background:#f0f0f1; color:#111214; box-shadow:none; 
 .winners li { min-height:46px; border-color:#34363d; border-radius:8px; background:#222328; }
 .winners li::before { background:#3a3c42; box-shadow:none; }
 .winners li::after { filter:grayscale(1); opacity:.55; }
-.inactive-screen { max-width:520px; padding:20px; background:#111214; border-inline:1px solid #292b30; }
+.inactive-screen {
+  width:min(100%, 520px);
+  max-width:520px;
+  min-height:100vh;
+  margin:0 auto;
+  padding:16px;
+  background:#111214;
+}
+.inactive-screen:not([hidden]) {
+  display:grid;
+  place-items:center;
+}
+.inactive-card {
+  width:100%;
+  padding:42px 24px 28px;
+  text-align:center;
+  border:1px solid #34363d;
+  border-radius:18px;
+  background:linear-gradient(180deg, #1d1e23 0%, #17181c 100%);
+  box-shadow:0 18px 50px rgba(0,0,0,.28);
+  overflow:hidden;
+}
+.inactive-card .live-pill { margin-bottom:30px; }
+.inactive-icon {
+  position:relative;
+  display:grid;
+  place-items:center;
+  width:76px;
+  height:76px;
+  margin:0 auto 24px;
+  border:1px solid #3e4047;
+  border-radius:50%;
+  background:#24262b;
+}
+.inactive-icon::before {
+  content:"";
+  width:30px;
+  height:30px;
+  border:3px solid #a6a8ae;
+  border-radius:50%;
+}
+.inactive-icon::after {
+  content:"";
+  position:absolute;
+  width:3px;
+  height:38px;
+  border-radius:999px;
+  background:#a6a8ae;
+  transform:rotate(-45deg);
+  box-shadow:0 0 0 4px #24262b;
+}
+.inactive-eyebrow {
+  margin:0 0 10px !important;
+  color:#85878e !important;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.18em;
+}
+.inactive-card h1 {
+  margin:0;
+  font-size:clamp(1.85rem, 8vw, 2.55rem);
+  line-height:1.05;
+  letter-spacing:-.045em;
+}
+.inactive-card > p:not(.inactive-eyebrow) {
+  margin:15px auto 0;
+  color:#a7a8ad;
+  font-size:14px;
+  line-height:1.65;
+}
+.inactive-divider {
+  width:44px;
+  height:1px;
+  margin:26px auto 18px;
+  background:#3a3c42;
+}
+.inactive-card small {
+  color:#74767d;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
 
 @media (min-width:521px) {
   body { padding-block:22px; }
   .page-shell { min-height:calc(100vh - 44px); border:1px solid #292b30; border-radius:18px; }
+  .inactive-screen {
+    min-height:calc(100vh - 44px);
+    border:1px solid #292b30;
+    border-radius:18px;
+  }
 }
 
 @media (max-width:390px) {
@@ -252,4 +339,7 @@ button { border-radius:9px; background:#f0f0f1; color:#111214; box-shadow:none; 
   .draw-section { padding:26px 9px 20px; }
   .wheel-wrap { width:calc(100% - 12px); }
   .draw-time, .winners { width:100%; }
+  .inactive-screen { padding:10px; }
+  .inactive-card { padding:36px 18px 24px; border-radius:15px; }
+  .inactive-card .live-pill { margin-bottom:26px; }
 }
