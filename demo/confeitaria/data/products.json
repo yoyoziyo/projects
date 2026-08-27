@@ -24,3 +24,4 @@
 
   {"id":"cento-doces","categoryId":"doces","name":"Cento de Doces para Festa","description":"Encomende com dois dias de antecedência.","tag":"2 dias de antecedência","available":true,"variants":[{"id":"cento","label":"100 unidades","price":100}],"flavors":["Beijinho","Brigadeiro","Brigadeiro de Ninho","Crespinho"]}
 ]
+
