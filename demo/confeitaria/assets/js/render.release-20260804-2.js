@@ -38,6 +38,11 @@ export function applyConfig(config){
   const businessType=qs('[data-business-type]');if(businessType)businessType.textContent=business.type||business.tagline||'Confeitaria';
   const businessAddress=qs('[data-business-address]');if(businessAddress)businessAddress.textContent=business.address;
   const businessStatus=qs('[data-business-status]');if(businessStatus){const isOpen=business.open!==false;businessStatus.classList.toggle('closed',!isOpen);businessStatus.innerHTML=`<i></i>${isOpen?'Aberto':'Fechado'}`}
+  const service=config.service||{};const estimate=qs('[data-service-estimate]');if(estimate)estimate.textContent=service.estimate||'Entrega: 40–50min | Retirada: 20min';
+  const hoursTable=qs('[data-hours-table]');if(hoursTable)hoursTable.innerHTML=(service.hours||[]).map(item=>`<div><span>${item.day}</span><strong>${item.time}</strong></div>`).join('');
+  const infoAddress=qs('[data-info-address]');if(infoAddress)infoAddress.textContent=business.address;
+  const mapFrame=qs('[data-map-frame]');if(mapFrame&&service.mapEmbedUrl){const iframe=document.createElement('iframe');iframe.src=service.mapEmbedUrl;iframe.title=`Mapa de ${business.name}`;iframe.loading='lazy';iframe.referrerPolicy='no-referrer-when-downgrade';iframe.allowFullscreen=true;mapFrame.replaceChildren(iframe)}
+  const infoSocials=qs('[data-info-socials]');if(infoSocials)infoSocials.innerHTML=contact.socials.map(s=>s.url?`<a href="${s.url}" target="_blank" rel="noreferrer">${s.label}</a>`:`<span>${s.label}</span>`).join('');
   document.querySelectorAll('[data-brand-logo]').forEach(logo=>{logo.src=business.logo;logo.alt=`Logo ${business.name}`});
   const announcement=qs('[data-announcement]');if(announcement)announcement.textContent=content.announcement||`♡ Seja bem-vindo à ${business.name}! ♡ Delícias feitas com amor para adoçar o seu dia!`;
   qs('[data-nav]').innerHTML=content.navigation.map(item=>`<a href="${item.href}">${item.label}</a>`).join('');
@@ -101,7 +106,7 @@ function card(product,category,config,onAdd){
 }
 
 export function renderCatalog(data,config,onAdd){
-  const categories=data.categories.filter(category=>category.enabled!==false);const products=data.products.filter(product=>product.available!==false);
+  const categories=data.categories.filter(category=>category.enabled!==false).sort((a,b)=>(a.order??9999)-(b.order??9999));const products=data.products.filter(product=>product.available!==false).sort((a,b)=>(a.order??9999)-(b.order??9999));
   const tabs=qs('[data-category-tabs]');const catalog=qs('[data-catalog]');tabs.innerHTML='';catalog.innerHTML='';
   tabs.innerHTML=categories.map(category=>`<a href="#${category.id}">${category.name}</a>`).join('');
   categories.forEach(category=>{
@@ -114,3 +119,4 @@ export function renderCatalog(data,config,onAdd){
 }
 
 export {money};
+
