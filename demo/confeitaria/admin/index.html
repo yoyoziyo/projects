@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#ff5f98">
+  <title>Painel da loja</title><link rel="stylesheet" href="./admin.css?v=20260827-3">
+</head>
+<body>
+  <main class="admin-shell">
+    <section class="admin-card setup-card" data-setup hidden><span class="admin-logo">SM</span><h1>Conectar o Firebase</h1><p>Configure o Firebase para ativar login e salvamento real.</p><button class="primary" type="button" data-demo>Testar em modo demonstração</button><a href="../">Voltar ao catálogo</a></section>
+    <section class="admin-card login-card" data-login hidden><span class="admin-logo">SM</span><p class="kicker">Área protegida</p><h1>Entrar no painel</h1><form data-login-form><label>E-mail<input name="email" type="email" autocomplete="username" required></label><label>Senha<input name="password" type="password" autocomplete="current-password" required></label><button class="primary" type="submit">Entrar</button><p class="form-message" data-login-message></p></form><a href="../">Voltar ao catálogo</a></section>
+
+    <section class="dashboard" data-dashboard hidden>
+      <header class="dashboard-header"><div><p class="kicker">Administração</p><h1 data-admin-store-name>Sua Marca</h1><span data-mode-label></span></div><div class="header-actions"><a class="quiet" href="../" target="_blank">Ver loja</a><button type="button" class="quiet" data-logout>Sair</button></div></header>
+      <section class="status-card"><div><strong>Status da loja</strong><span>Altera imediatamente o status exibido no catálogo.</span></div><label class="status-switch"><input type="checkbox" data-store-open><span></span><b data-store-status>Aberto</b></label></section>
+      <nav class="admin-tabs" aria-label="Seções do painel"><button class="active" data-admin-tab="products">Produtos</button><button data-admin-tab="categories">Categorias</button><button data-admin-tab="service">Atendimento</button><button data-admin-tab="appearance">Aparência</button></nav>
+
+      <section class="admin-panel" data-admin-panel="products">
+        <div class="toolbar"><div><h2>Produtos</h2><p><span data-product-count>0</span> itens · arraste para ordenar</p></div><button class="primary compact" type="button" data-new-product>+ Novo produto</button></div>
+        <div class="filters"><input type="search" data-product-search placeholder="Buscar produto"><select data-category-filter><option value="">Todas as categorias</option></select></div>
+        <div class="import-note" data-import-note hidden><p>O Firestore está vazio. Importe o catálogo atual para começar.</p><button type="button" class="primary" data-import>Importar catálogo inicial</button></div>
+        <div class="product-list sortable-list" data-admin-products></div>
+      </section>
+
+      <section class="admin-panel" data-admin-panel="categories" hidden>
+        <div class="toolbar"><div><h2>Categorias</h2><p><span data-category-count>0</span> categorias · arraste para ordenar</p></div><button class="primary compact" type="button" data-new-category>+ Nova categoria</button></div>
+        <p class="panel-hint">Categorias inativas ficam escondidas no cardápio. Só é possível remover uma categoria vazia.</p><div class="category-list sortable-list" data-admin-categories></div>
+      </section>
+
+      <section class="admin-panel" data-admin-panel="service" hidden>
+        <div class="toolbar"><div><h2>Atendimento</h2><p>Entrega, retirada e informações públicas</p></div></div>
+        <form class="service-form" data-service-form>
+          <section class="settings-card"><h3>Entrega e retirada</h3><div class="field-row"><label>Tempo de entrega<input name="deliveryTime" placeholder="Ex.: 40–50min" required></label><label>Tempo de retirada<input name="pickupTime" placeholder="Ex.: 20min" required></label></div><label>Taxa de entrega (R$)<input name="deliveryFee" type="number" min="0" step="0.01" required><small>Use 0 para entrega grátis.</small></label><div class="service-preview" data-service-preview>Entrega: 40–50min | Retirada: 20min</div></section>
+          <section class="settings-card"><h3>Horários</h3><p class="settings-help">Você pode informar um intervalo ou “Fechado”.</p><div class="hours-editor" data-hours-editor></div></section>
+          <section class="settings-card"><h3>Informações da loja</h3><label>Endereço<input name="address" placeholder="Rua, número, bairro e cidade"></label><label>Link do mapa incorporado<input name="mapEmbedUrl" type="url" placeholder="https://www.google.com/maps/embed?..."><small>Use o endereço fornecido por “Incorporar um mapa” no Google Maps.</small></label><label>Instagram<input name="instagram" type="url" placeholder="https://instagram.com/suamarca"></label><label>Facebook<input name="facebook" type="url" placeholder="https://facebook.com/suamarca"></label></section>
+          <p class="form-message" data-service-message></p><button class="primary save-settings" type="submit">Salvar atendimento</button>
+        </form>
+      </section>
+
+      <section class="admin-panel" data-admin-panel="appearance" hidden>
+        <div class="toolbar"><div><h2>Aparência</h2><p>Marca e cores do catálogo</p></div></div>
+        <form class="appearance-form" data-appearance-form><section class="settings-card"><h3>Identidade da loja</h3><label>Nome da loja<input name="businessName" required></label><label>Tipo do negócio<input name="businessType" placeholder="Ex.: Confeitaria"></label><label>Descrição<textarea name="businessDescription" rows="3"></textarea></label></section><section class="settings-card"><div class="settings-title"><h3>Cores do site</h3><button type="button" class="text-button" data-reset-theme>Restaurar rosa</button></div><div class="color-grid"><label>Principal<span class="color-control"><input name="primary" type="color"><input name="primaryHex" maxlength="7"></span></label><label>Destaque<span class="color-control"><input name="accent" type="color"><input name="accentHex" maxlength="7"></span></label><label>Fundo<span class="color-control"><input name="bg" type="color"><input name="bgHex" maxlength="7"></span></label><label>Superfície<span class="color-control"><input name="surface" type="color"><input name="surfaceHex" maxlength="7"></span></label><label>Texto<span class="color-control"><input name="text" type="color"><input name="textHex" maxlength="7"></span></label><label>Texto suave<span class="color-control"><input name="muted" type="color"><input name="mutedHex" maxlength="7"></span></label></div><div class="theme-preview" data-theme-preview><span>Prévia</span><strong>Sua Marca</strong><button type="button">Adicionar à sacola</button></div></section><p class="form-message" data-appearance-message></p><button class="primary save-settings" type="submit">Salvar aparência</button></form>
+      </section>
+    </section>
+  </main>
+
+  <dialog class="editor-dialog" data-product-editor><form method="dialog" data-product-form><header><div><p class="kicker">Produto</p><h2 data-editor-title>Novo produto</h2></div><button type="button" data-close-product aria-label="Fechar">×</button></header><div class="editor-body"><input name="id" type="hidden"><label>Nome<input name="name" required></label><label>Categoria<select name="categoryId" required></select></label><label>Descrição<textarea name="description" rows="3"></textarea></label><div class="field-row"><label>Preço base (R$)<input name="price" type="number" min="0" step="0.01"></label><label>Etiqueta<input name="tag" placeholder="Ex.: Novidade"></label></div><label>Imagem (URL ou caminho)<input name="image" placeholder="./assets/img/produto.jpg"></label><label class="check-line"><input name="available" type="checkbox" checked><span>Produto ativo no cardápio</span></label><section class="variant-editor"><div><strong>Variações e preços</strong><button type="button" data-add-variant>+ Variação</button></div><div data-variant-rows></div></section><p class="form-message" data-editor-message></p></div><footer><button type="button" class="quiet" data-close-product>Cancelar</button><button type="submit" class="primary">Salvar produto</button></footer></form></dialog>
+  <dialog class="editor-dialog category-editor" data-category-editor><form method="dialog" data-category-form><header><div><p class="kicker">Categoria</p><h2 data-category-editor-title>Nova categoria</h2></div><button type="button" data-close-category aria-label="Fechar">×</button></header><div class="editor-body"><label>Nome<input name="name" required></label><label>Descrição<textarea name="description" rows="3"></textarea></label><label class="check-line"><input name="enabled" type="checkbox" checked><span>Categoria ativa no cardápio</span></label><p class="form-message" data-category-message></p></div><footer><button type="button" class="quiet" data-close-category>Cancelar</button><button type="submit" class="primary">Salvar categoria</button></footer></form></dialog>
+  <template id="variant-row-template"><div class="variant-row"><input data-variant-label placeholder="Nome da variação"><input data-variant-price type="number" min="0" step="0.01" placeholder="Preço"><button type="button" data-remove-variant aria-label="Remover variação">×</button></div></template>
+  <script type="module" src="./admin.js?v=20260827-4"></script>
+</body>
+</html>
+
