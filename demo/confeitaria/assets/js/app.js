@@ -1,7 +1,7 @@
 import {addItem,updateQuantity,removeItem,cartTotal,getCart,subscribe} from './store.release-20260804-1.js';
 import {applyConfig,renderCatalog,money} from './render.release-20260804-2.js?v=20260827-1';
 import {setupCheckout,updateCheckoutSummary} from './checkout.release-20260804-2.js?v=20260804-3';
-import {loadCatalogData} from './firebase-catalog.js?v=20260827-2';
+import {loadCatalogData} from './firebase-catalog.js?v=20260827-3';
 
 const qs=selector=>document.querySelector(selector);let config;let toastTimer;
 const resources={
