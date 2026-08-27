@@ -80,3 +80,4 @@ export function updateCheckoutSummary(config,methodId){
   const lines=getCart().map(item=>`<div class="summary-line summary-product"><span>${item.quantity}x ${item.name}<small>${item.variantLabel}</small></span><strong>${money(item.price*item.quantity,config.currency,config.locale)}</strong></div>`).join('');
   qs('[data-checkout-summary]').innerHTML=`<p class="summary-title">Resumo do pedido</p>${lines}<div class="summary-divider"></div><div class="summary-line"><span>Subtotal</span><strong>${money(subtotal,config.currency,config.locale)}</strong></div><div class="summary-line"><span>Frete · ${method.label}</span><strong>${money(fee,config.currency,config.locale)}</strong></div>${scheduleText?`<div class="summary-line"><span>Agendamento</span><strong>${scheduleText}</strong></div>`:''}<div class="summary-line summary-total"><span>Total</span><strong>${money(total,config.currency,config.locale)}</strong></div>`;
 }
+
