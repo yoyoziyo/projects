@@ -25,7 +25,7 @@
   <link rel="icon" type="image/png" href="./assets/img/logo-lai-iara.png">
   <link rel="apple-touch-icon" href="./assets/img/logo-lai-iara.png">
   <link rel="stylesheet" href="./assets/css/styles.release-20260804-4.css">
-  <link rel="stylesheet" href="./assets/css/mobile-catalog.css?v=20260808-1">
+  <link rel="stylesheet" href="./assets/css/mobile-catalog.css?v=20260817-1">
   <style>.site-header .brand-logo{display:block!important;width:76px!important;height:76px!important;max-width:76px!important;max-height:76px!important;flex:0 0 76px!important;object-fit:contain}.footer-logo{display:block!important;width:92px!important;height:92px!important;max-width:92px!important;max-height:92px!important;object-fit:contain}@media(max-width:799px){.site-header .brand-logo{width:56px!important;height:56px!important;max-width:56px!important;max-height:56px!important;flex-basis:56px!important}}</style>
   <link rel="manifest" href="./manifest.webmanifest">
   <title>Sua Marca | Doces, Salgados, Bolos e Combos</title>
@@ -50,6 +50,8 @@
         <div class="store-logo" data-brand-mark aria-hidden="true">SM</div>
         <div class="store-summary"><p class="store-kicker">Catálogo digital</p><h1 data-brand-display>Sua Marca</h1><div class="store-badges"><span class="store-type" data-business-type>Confeitaria</span><span class="store-status" data-business-status><i></i>Aberto</span></div><p class="store-location" data-business-address>Sua localização</p></div>
       </div>
+      <p class="service-estimate" data-service-estimate>Entrega: 40–50min | Retirada: 20min</p>
+      <div class="store-support-actions"><button type="button" data-open-support="hours"><span aria-hidden="true">◷</span>Horários</button><button type="button" data-open-support="info"><span aria-hidden="true">ⓘ</span>Informações</button></div>
       <div class="store-services" aria-label="Informações da loja"><span><b>WhatsApp</b><small>Pedido rápido e direto</small></span><span><b>Entrega ou retirada</b><small>Você escolhe no checkout</small></span><span><b>Agendamento</b><small>Escolha a melhor data</small></span></div>
       <div class="hero-content" hidden><p data-hero-eyebrow></p><h2 data-hero-title></h2><p data-hero-copy></p><a data-hero-primary href="#cardapio"></a><a data-hero-secondary href="#combos"></a></div>
     </section>
@@ -102,6 +104,9 @@
   <nav class="bottom-nav" aria-label="Navegação principal"><a class="active" href="#cardapio"><span aria-hidden="true">▤</span><small>Cardápio</small></a><button type="button" data-search-toggle><span aria-hidden="true">⌕</span><small>Busca</small></button><button type="button" data-open-cart><span class="bottom-bag" aria-hidden="true"></span><small>Sacola</small><b class="bottom-cart-count" data-cart-count>0</b></button></nav>
   <div class="scrim" data-scrim hidden></div>
 
+  <dialog class="support-dialog" data-support-dialog="hours" aria-labelledby="hours-title"><div class="support-dialog-header"><div><p class="eyebrow">Atendimento</p><h2 id="hours-title">Horários</h2></div><button type="button" data-close-support aria-label="Fechar horários">×</button></div><div class="support-dialog-body"><div class="hours-table" data-hours-table></div></div></dialog>
+  <dialog class="support-dialog" data-support-dialog="info" aria-labelledby="info-title"><div class="support-dialog-header"><div><p class="eyebrow">Conheça a loja</p><h2 id="info-title">Informações</h2></div><button type="button" data-close-support aria-label="Fechar informações">×</button></div><div class="support-dialog-body"><strong>Endereço</strong><p data-info-address>Sua localização</p><div class="map-frame" data-map-frame><p>O mapa será exibido após configurar o endereço.</p></div><div class="social-links" data-info-socials></div></div></dialog>
+
   <aside class="drawer cart-drawer" data-cart-drawer aria-hidden="true" aria-labelledby="cart-title">
     <div class="drawer-header"><div><p class="eyebrow">Seu pedido</p><h2 id="cart-title">Carrinho</h2></div><button class="icon-button" type="button" data-close-drawers aria-label="Fechar">×</button></div>
     <div class="drawer-body" data-cart-items></div>
@@ -145,6 +150,7 @@
     </dialog>
   </template>
   <script type="application/ld+json" data-schema>{"@context":"https://schema.org","@type":"Bakery","name":"Sua Marca","description":"Doces, salgados, bolos e combos preparados com amor.","url":"https://yoites.com/demo/confeitaria/"}</script>
-  <script type="module" src="./assets/js/app.js?v=20260810-1"></script>
+  <script type="module" src="./assets/js/app.js?v=20260827-2"></script>
 </body>
 </html>
+
