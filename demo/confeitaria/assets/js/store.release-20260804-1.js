@@ -9,3 +9,4 @@ export function removeItem(id){items=items.filter(entry=>entry.id!==id);save()}
 export function clearCart(){items=[];localStorage.removeItem(STORAGE_KEY);listeners.forEach(fn=>fn(getCart()))}
 export function cartTotal(){return items.reduce((sum,item)=>sum+item.price*item.quantity,0)}
 export function subscribe(fn){listeners.add(fn);fn(getCart());return()=>listeners.delete(fn)}
+
