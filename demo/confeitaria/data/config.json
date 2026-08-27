@@ -11,6 +11,19 @@
     "description": "Doces, salgados, bolos e combos preparados com amor para deixar cada momento mais saboroso.",
     "address": "Sua localização"
   },
+  "service": {
+    "estimate": "Entrega: 40–50min | Retirada: 20min",
+    "mapEmbedUrl": "",
+    "hours": [
+      {"day":"Segunda-feira","time":"08:00–18:00"},
+      {"day":"Terça-feira","time":"08:00–18:00"},
+      {"day":"Quarta-feira","time":"08:00–18:00"},
+      {"day":"Quinta-feira","time":"08:00–18:00"},
+      {"day":"Sexta-feira","time":"08:00–18:00"},
+      {"day":"Sábado","time":"08:00–14:00"},
+      {"day":"Domingo","time":"Fechado"}
+    ]
+  },
   "seo": {
     "title": "Sua Marca | Doces, Salgados, Bolos e Combos",
     "description": "Conheça o cardápio da Sua Marca: bolos, doces, salgados e combos para festas e momentos especiais. Monte seu pedido online e envie pelo WhatsApp.",
@@ -75,3 +88,4 @@
     "footer":{"copyright":"Todos os direitos reservados.","links":[{"label":"Início","href":"#inicio"},{"label":"Cardápio","href":"#cardapio"}]}
   }
 }
+
