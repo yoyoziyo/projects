@@ -1,7 +1,6 @@
 const LINKS = {
   community: "https://www.roblox.com/communities/33319096/Outfits-Central#!/about",
-  // Troque somente esta linha quando o link definitivo do hub estiver disponível.
-  hub: "https://www.roblox.com/communities/33319096/Outfits-Central#!/experiences"
+  hub: "https://www.roblox.com/games/119452074842123/"
 };
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -9,6 +8,12 @@ const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
 const root = document.documentElement;
 const profileCard = document.querySelector(".profile-card");
 const toast = document.querySelector("#toast");
+
+// Camada básica contra download casual das imagens.
+document.addEventListener("contextmenu", event => event.preventDefault());
+document.addEventListener("dragstart", event => {
+  if (event.target instanceof HTMLImageElement) event.preventDefault();
+});
 
 document.querySelectorAll("[data-link]").forEach(link => {
   const destination = LINKS[link.dataset.link];
@@ -80,7 +85,7 @@ function renderStars(time = 0) {
     const pulse = reducedMotion ? 1 : .62 + Math.sin(time * star.speed * .01 + star.phase) * .38;
     context.beginPath();
     context.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-    context.fillStyle = `rgba(178, 221, 255, ${Math.max(.05, star.alpha * pulse)})`;
+    context.fillStyle = `rgba(218, 222, 230, ${Math.max(.05, star.alpha * pulse)})`;
     context.fill();
   });
 
