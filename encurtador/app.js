@@ -70,7 +70,8 @@ form.addEventListener('submit', async event => {
     shortLink.textContent = address;
     expiry.textContent = 'Disponível até ' + new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit' }).format(created.expiresAt) + '.';
     result.hidden = false;
-  } catch {
+  } catch (error) {
+    console.error('Falha ao criar link curto:', error);
     status.textContent = 'O serviço ainda não está disponível. Tente novamente mais tarde.';
   } finally {
     button.disabled = false;
