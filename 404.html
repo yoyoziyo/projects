@@ -16,19 +16,6 @@
 </head>
 <body>
   <main><span>YOITES</span><h1>Página não encontrada.</h1><p>O endereço que você tentou abrir não está disponível.</p><a href="/">Voltar ao início ↗</a></main>
-  <script src="/encurtador/config.js"></script>
-  <script>
-    (async()=>{
-      const match=location.pathname.match(/^\/encurtador\/([A-Za-z0-9]{3})\/?$/);
-      if(!match||!window.YOITES_SHORTENER_API)return;
-      try{
-        const response=await fetch(window.YOITES_SHORTENER_API+'/resolve/'+match[1],{cache:'no-store'});
-        if(!response.ok)return;
-        const data=await response.json();
-        const destination=new URL(data.url);
-        if(['http:','https:'].includes(destination.protocol))location.replace(destination.href);
-      }catch{}
-    })();
-  </script>
+  <script type="module" src="/encurtador/redirect.js"></script>
 </body>
 </html>
