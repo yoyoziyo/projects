@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#08090b">
+  <title>Página não encontrada — YOITES</title>
+  <style>
+    :root{color-scheme:dark;font-family:Inter,Arial,sans-serif;background:#08090b;color:#f4f4f2}
+    *{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;padding:28px}
+    main{width:min(100%,520px)}a{color:#f4f4f2}span{font-size:12px;letter-spacing:.16em;font-weight:700}
+    h1{font-size:clamp(38px,7vw,66px);line-height:1.04;letter-spacing:-.06em;margin:70px 0 18px}
+    p{color:#979ba3;font-size:16px;line-height:1.55;margin:0 0 30px}
+  </style>
+</head>
+<body>
+  <main><span>YOITES</span><h1>Página não encontrada.</h1><p>O endereço que você tentou abrir não está disponível.</p><a href="/">Voltar ao início ↗</a></main>
+  <script src="/encurtador/config.js"></script>
+  <script>
+    (async()=>{
+      const match=location.pathname.match(/^\/encurtador\/([A-Za-z0-9]{3})\/?$/);
+      if(!match||!window.YOITES_SHORTENER_API)return;
+      try{
+        const response=await fetch(window.YOITES_SHORTENER_API+'/resolve/'+match[1],{cache:'no-store'});
+        if(!response.ok)return;
+        const data=await response.json();
+        const destination=new URL(data.url);
+        if(['http:','https:'].includes(destination.protocol))location.replace(destination.href);
+      }catch{}
+    })();
+  </script>
+</body>
+</html>
