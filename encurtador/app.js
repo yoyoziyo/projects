@@ -1,6 +1,6 @@
 import { initializeApp, getApps, getApp } from 'https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js';
 import { getAuth, signInAnonymously } from 'https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js';
-import { doc, getDoc, getFirestore, runTransaction, serverTimestamp, Timestamp } from 'https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js';
+import { doc, getFirestore, runTransaction, serverTimestamp } from 'https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js';
 import { firebaseConfig } from '../sorteio/assets/js/firebase-config.js';
 
 const firebase = getApps().length ? getApp() : initializeApp(firebaseConfig);
@@ -37,14 +37,12 @@ async function createLink(url) {
       transaction.set(reference, {
         url,
         uid: user.uid,
-        createdAt: serverTimestamp(),
-        expiresAt: Timestamp.fromMillis(Date.now() + 600_000)
+        createdAt: serverTimestamp()
       });
       return true;
     });
     if (!created) continue;
-    const saved = await getDoc(reference);
-    return { code, expiresAt: saved.data().createdAt.toMillis() + 600_000 };
+    return { code };
   }
   throw new Error('Não foi possível reservar um código. Tente novamente.');
 }
@@ -68,11 +66,11 @@ form.addEventListener('submit', async event => {
     const address = new URL('/encurtador/' + created.code, location.origin).href;
     shortLink.href = address;
     shortLink.textContent = address;
-    expiry.textContent = 'Disponível até ' + new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit' }).format(created.expiresAt) + '.';
+    expiry.textContent = 'Este link não expira e pode ser usado quantas vezes quiser.';
     result.hidden = false;
   } catch (error) {
     console.error('Falha ao criar link curto:', error);
-    status.textContent = 'O serviço ainda não está disponível. Tente novamente mais tarde.';
+    status.textContent = 'Não foi possível criar o link. Aguarde um instante e tente novamente.';
   } finally {
     button.disabled = false;
     button.textContent = 'Encurtar link';
